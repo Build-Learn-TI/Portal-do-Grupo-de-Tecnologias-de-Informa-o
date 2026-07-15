@@ -1,7 +1,7 @@
 ---
 name: Relatório de erro
 about: Registar um problema encontrado no portal
- title: "[Bug] "
+title: "[Bug] "
 labels: bug
 assignees: ""
 ---
