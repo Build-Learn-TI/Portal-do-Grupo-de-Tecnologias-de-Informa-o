@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Materiais</title>
+</head>
+<body>
+    <aside class="Layout-aside">
+            <div class="Layout-aside__logo">
+                <img src="Videos/icons/main logo.PNG" alt="Logo do site">
+                <h2>Grupo de TI</h2>
+                <p>Tecnologias de Informação</p>
+            </div>
+            <nav class="Layout-aside__nav">
+                <ul>
+                    <li><a href="Inicio.html">Início</a></li>
+                    <li><a href="sobre.html">Sobre</a></li>
+                    <li><a href="Materiais.html">Materiais</a></li>
+                    <li><a href="Eventos.html">Eventos</a></li>
+                    <li><a href="Projectos.html">Projectos</a></li>
+                    <li><a href="Contacto.html">Contato</a></li>
+                </ul>
+                <div>
+                    <h4>GitHub</h4>
+                    <p>contribui para o nosso repositorio</p><a href="#">ver repositorio</a>
+                </div>
+            </nav>
+        </aside>
+        <main class="Layout-main">
+            <div class="filtros-container">
+                <button class="btn-filtro active" data-filter="todos">Todos</button>
+                <button class="btn-filtro" data-filter="programacao">Programação</button>
+                <button class="btn-filtro" data-filter="design">Design</button>
+                <button class="btn-filtro" data-filter="github">GitHub</button>
+                <button class="btn-filtro" data-filter="redes">Redes</button>
+                <button class="btn-filtro" data-filter="dados">Bases de Dados</button>
+            </div>
+            <div class="conteudo-lista">
+                <section class="grade-cursos">
+                    <article class="cartao-curso" data-category="programacao">
+                        <div class="cartao-icone">
+                        <img src="icone-globo.svg" alt="Ícone Web">
+                        </div>
+                        <h3 class="cartao-titulo">Introdução ao HTML & CSS</h3>
+                        <p class="cartao-descricao">Aprende a estruturar e estilizar páginas web do zero.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="programacao">
+                        <div class="cartao-icone">
+                        <img src="icone-raio.svg" alt="Ícone Raio">
+                        </div>
+                        <h3 class="cartao-titulo">JavaScript Básico</h3>
+                        <p class="cartao-descricao">Fundamentos de JavaScript para interactividade na web.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="github">
+                        <div class="cartao-icone">
+                        <img src="icone-link.svg" alt="Ícone Link">
+                        </div>
+                        <h3 class="cartao-titulo">Git & GitHub Essentials</h3>
+                        <p class="cartao-descricao">Controlo de versões, branches, commits e pull requests.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="design">
+                        <div class="cartao-icone">
+                        <img src="icone-paleta.svg" alt="Ícone Paleta de Cores">
+                        </div>
+                        <h3 class="cartao-titulo">Figma para Iniciantes</h3>
+                        <p class="cartao-descricao">Design de interfaces com a ferramenta mais usada no mercado.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="programacao">
+                        <div class="cartao-icone">
+                        <img src="icone-atomo.svg" alt="Ícone Átomo">
+                        </div>
+                        <h3 class="cartao-titulo">React do Zero</h3>
+                        <p class="cartao-descricao">Criação de interfaces modernas com React e componentes.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta intermedio">Intermédio</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="dados">
+                        <div class="cartao-icone">
+                        <img src="icone-gaveta.svg" alt="Ícone Arquivo/Gaveta">
+                        </div>
+                        <h3 class="cartao-titulo">SQL e Bases de Dados</h3>
+                        <p class="cartao-descricao">Fundamentos de bases de dados relacionais com SQL.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="programacao">
+                        <div class="cartao-icone">
+                        <img src="icone-python.svg" alt="Ícone Logo Python">
+                        </div>
+                        <h3 class="cartao-titulo">Python para Todos</h3>
+                        <p class="cartao-descricao">Automação, scripts e análise de dados com Python.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="redes">
+                        <div class="cartao-icone">
+                        <img src="icone-satelite.svg" alt="Ícone Satélite">
+                        </div>
+                        <h3 class="cartao-titulo">Fundamentos de Redes</h3>
+                        <p class="cartao-descricao">Protocolos, endereçamento IP e arquitectura de redes.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta iniciante">Iniciante</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="cartao-curso" data-category="design">
+                        <div class="cartao-icone">
+                        <img src="icone-monitor.svg" alt="Ícone Monitor">
+                        </div>
+                        <h3 class="cartao-titulo">UI/UX Design Principles</h3>
+                        <p class="cartao-descricao">Boas práticas de usabilidade e experiência do utilizador.</p>
+                        <div class="cartao-rodape">
+                        <span class="etiqueta intermedio">Intermédio</span>
+                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                        </div>
+                    </article>
+                </section>
+            </div>
+        </main>
+    
+</body>
+</html>
