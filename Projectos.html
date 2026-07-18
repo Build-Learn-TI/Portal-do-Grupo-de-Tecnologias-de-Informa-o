@@ -1,16 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projectos</title>
+    <title>Projectos - Build and Learn TI</title>
+    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <link rel="stylesheet" href="estilo-portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="Layout-principal">
+        <div class="theme-container-global">
+            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
+        <header class="Layout-mobile-header">
+            <img src="logo/logo.svg" alt="Logo">
+            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
+        </header>
         <aside class="Layout-aside">
             <div class="Layout-aside__logo">
-                <img src="Videos/icons/main logo.PNG" alt="Logo do site">
-                <h2>Grupo de TI</h2>
+                <img src="logo/logo.svg" alt="Logo do site">
+                <h2>Build and Learn TI</h2>
                 <p>Tecnologias de Informação</p>
             </div>
             <nav class="Layout-aside__nav">
@@ -19,13 +46,9 @@
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="Materiais.html">Materiais</a></li>
                     <li><a href="Eventos.html">Eventos</a></li>
-                    <li><a href="Projectos.html">Projectos</a></li>
+                    <li><a href="Projectos.html" class="active">Projectos</a></li>
                     <li><a href="Contacto.html">Contato</a></li>
                 </ul>
-                <div>
-                    <h4>GitHub</h4>
-                    <p>contribui para o nosso repositorio</p><a href="#">ver repositorio</a>
-                </div>
             </nav>
         </aside>
         <main class="Layout-main">
@@ -34,21 +57,17 @@
 
                 <div class="trilha-progresso">
                     <div class="fase-item concluida">
-                    <div class="indicador">
-                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </div>
-                    <span class="legenda">Alinhamento</span>
+                        <div class="indicador">
+                            <i class="fa-solid fa-check"></i>
+                        </div>
+                        <span class="legenda">Alinhamento</span>
                     </div>
 
                     <div class="linha-conectora concluida">linha</div>
 
                     <div class="fase-item concluida">
                         <div class="indicador">
-                            <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                            <i class="fa-solid fa-check"></i>
                         </div>
                         <span class="legenda">Identidade<br>Visual</span>
                     </div>
@@ -56,62 +75,64 @@
                     <div class="linha-conectora concluida">linha</div>
 
                     <div class="fase-item atual">
-                    <div class="indicador">3</div>
-                    <span class="legenda">Construção</span>
+                        <div class="indicador">3</div>
+                        <span class="legenda">Construção</span>
                     </div>
 
                     <div class="linha-conectora pendente">linha</div>
 
                     <div class="fase-item pendente">
-                    <div class="indicador">4</div>
-                    <span class="legenda">Integração</span>
+                        <div class="indicador">4</div>
+                        <span class="legenda">Integração</span>
                     </div>
 
                     <div class="linha-conectora pendente">Linha</div>
 
                     <div class="fase-item pendente">
-                    <div class="indicador">5</div>
-                    <span class="legenda">Testes</span>
+                        <div class="indicador">5</div>
+                        <span class="legenda">Testes</span>
                     </div>
 
                     <div class="linha-conectora pendente">linha</div>
 
                     <div class="fase-item pendente">
-                    <div class="indicador">6</div>
-                    <span class="legenda">Publicação</span>
+                        <div class="indicador">6</div>
+                        <span class="legenda">Publicação</span>
                     </div>
 
                     <div class="linha-conectora pendente"></div>
 
                     <div class="fase-item pendente">
-                    <div class="indicador">7</div>
-                    <span class="legenda">Melhorias</span>
+                        <div class="indicador">7</div>
+                        <span class="legenda">Melhorias</span>
                     </div>
                 </div>
-                </section>
-                <Section class="Fases">
-                    <article class="cartão de fase">
-                        <h3 class="Fase">Portal do Grupo de TI</h3>
-                        <span class="estado">Em andamento</span>
-                        <p class="descricao">Fase 3-Construção</p>
-                    </article>
-                    <article class="cartão de fase">
-                        <h3 class="Fase">Repositório de Materias</h3>
-                        <span class="estado">Planeado</span>
-                        <p class="descricao">Fase 7-Melhorias</p>
-                    </article>
-                    <article class="cartão de fase">
-                        <h3 class="Fase">Blog Técnico do Grupo</h3>
-                        <span class="estado">Futuro</span>
-                        <p class="descricao">Fase 7-Planeado</p>
-                    </article>
-                    <article class="cartão de fase">
-                        <h3 class="Fase">Painel de Eventos</h3>
-                        <span class="estado">Futuro</span>
-                        <p class="descricao">Fase 7-Planeado</p>
-                    </article>
-                </Section>
+            </section>
+            <section class="Fases">
+                <article class="cartao-fase">
+                    <h3 class="Fase">Portal do Grupo de TI</h3>
+                    <span class="estado em-andamento">Em andamento</span>
+                    <p class="descricao">Fase 3 - Construção</p>
+                </article>
+                <article class="cartao-fase">
+                    <h3 class="Fase">Repositório de Materiais</h3>
+                    <span class="estado planeado">Planeado</span>
+                    <p class="descricao">Fase 7 - Melhorias</p>
+                </article>
+                <article class="cartao-fase">
+                    <h3 class="Fase">Blog Técnico do Grupo</h3>
+                    <span class="estado futuro">Futuro</span>
+                    <p class="descricao">Fase 7 - Planeado</p>
+                </article>
+                <article class="cartao-fase">
+                    <h3 class="Fase">Painel de Eventos</h3>
+                    <span class="estado futuro">Futuro</span>
+                    <p class="descricao">Fase 7 - Planeado</p>
+                </article>
+            </section>
         </main>
-    
+
+        <script src="script.js"></script>
 </body>
+
 </html>
