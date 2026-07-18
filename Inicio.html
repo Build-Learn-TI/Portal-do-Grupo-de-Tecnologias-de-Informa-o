@@ -1,57 +1,117 @@
-`<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Início - Build and Learn TI</title>
+    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <link rel="stylesheet" href="estilo-portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div class="Layout-principal">
+        <div class="theme-container-global">
+            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
+        <header class="Layout-mobile-header">
+            <img src="logo/logo.svg" alt="Logo">
+            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
+        </header>
         <aside class="Layout-aside">
             <div class="Layout-aside__logo">
-                <img src="Videos/icons/main logo.PNG" alt="Logo do site">
-                <h2>Grupo de TI</h2>
+                <img src="logo/logo.svg" alt="Logo do site">
+                <h2>Build and Learn TI</h2>
                 <p>Tecnologias de Informação</p>
             </div>
             <nav class="Layout-aside__nav">
                 <ul>
-                    <li><a href="Inicio.html">Início</a></li>
+                    <li><a href="Inicio.html" class="active">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="Materiais.html">Materiais</a></li>
                     <li><a href="Eventos.html">Eventos</a></li>
                     <li><a href="Projectos.html">Projectos</a></li>
-                    <li><a href="#">Contato</a></li>
+                    <li><a href="Contacto.html">Contato</a></li>
                 </ul>
-                <div>
-                    <h4>GitHub</h4>
-                    <p>contribui para o nosso repositorio</p><a href="#">ver repositorio</a>
-                </div>
             </nav>
         </aside>
         <main class="Layout-main">
             <section class="Layout-inicio__content">
-                <section class="parte superior"> 
+                <section class="parte-superior">
                     <h1>BEM-VINDO AO PORTAL</h1>
                     <p>Grupo de Tecnologias e Informação</p>
-                    <div class = "butões de ação">
-                        <a href="#">conhecer grupo-><a>
-                        <a href="#">ver projectos</a>
+                    <div class="botoes-acao">
+                        <a href="sobre.html" class="btn-primario">conhecer grupo &rarr;</a>
+                        <a href="Projectos.html" class="btn-secundario">ver projectos</a>
                     </div>
                 </section>
-            <section class="layout de info">
-                <div class="membros activos"><h2>12</h2><p>membros activos</p></div>
-                <div class="fases do projecto"><h2>7</h2><p>fases do Projecto</p></div>
-                <div class="Equipas"><h2>5</h2><p>equipas</p></div>
-                <div class="portal publicado"><h2>1</h2><p>portal publicado</p></div>
-            </section>
-            <section class="oque o portal oferece">
-                <h2> oque o portal oferece</h2>
-                <a href="#" class="Sobre Nós">Sobre nós<div><img src="Videos/icons/sobre nós.PNG" alt="icone"> </div>  <p>objectivos e valores do grupo</p> </a>
-                <a href="#" class="Sobre Nós">Materias<div><img src="Videos/icons/materias.PNG" alt="icone"> </div>  <p>Cursos e recursos recomebdados</p> </a>
-                <a href="#" class="Sobre Nós">Eventos<div><img src="Videos/icons/Eventos.PNG" alt="icone"> </div>  <p>Workshops e oportunidades</p> </a>
-                <a href="#" class="Sobre Nós">Projectos<div><img src="Videos/icons/Projectos.PNG" alt="icone"> </div>  <p>trabalhos colaborativos</p> </a>
-            </section>    
+                <section class="layout-info">
+                    <div class="membros-activos">
+                        <h2>12</h2>
+                        <p>membros activos</p>
+                    </div>
+                    <div class="fases-projecto">
+                        <h2>7</h2>
+                        <p>fases do Projecto</p>
+                    </div>
+                    <div class="equipas">
+                        <h2>5</h2>
+                        <p>equipas</p>
+                    </div>
+                    <div class="portal-publicado">
+                        <h2>1</h2>
+                        <p>portal publicado</p>
+                    </div>
+                </section>
+                <section class="oque-portal-oferece">
+                    <h2>O que o portal oferece</h2>
+                    <div class="grelha-ofertas">
+                        <a href="sobre.html" class="cartao-oferta">
+                            <div class="cartao-oferta__icone"><i class="fa-solid fa-circle-info fa-2x"></i></div>
+                            <h3>Sobre nós</h3>
+                            <p>objectivos e valores do grupo</p>
+                        </a>
+                        <a href="Materiais.html" class="cartao-oferta">
+                            <div class="cartao-oferta__icone"><i class="fa-solid fa-atom fa-2x"></i></div>
+                            <h3>Materiais</h3>
+                            <p>Cursos e recursos recomendados</p>
+                        </a>
+                        <a href="Eventos.html" class="cartao-oferta">
+                            <div class="cartao-oferta__icone"><i class="fa-solid fa-calendar-days fa-2x"></i></div>
+                            <h3>Eventos</h3>
+                            <p>Workshops e oportunidades</p>
+                        </a>
+                        <a href="Projectos.html" class="cartao-oferta">
+                            <div class="cartao-oferta__icone"><i class="fa-brands fa-github fa-2x"></i></div>
+                            <h3>Projectos</h3>
+                            <p>trabalhos colaborativos</p>
+                        </a>
+                    </div>
+                </section>
+                <section class="github-rodape">
+                    <h4>GitHub</h4>
+                    <p>contribui para o nosso repositorio</p>
+                    <a href="#">ver repositorio</a>
+                </section>
         </main>
     </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
