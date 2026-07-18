@@ -1,15 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
+    <title>Eventos e Workshops - Build and Learn TI</title>
+    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <link rel="stylesheet" href="estilo-portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <aside class="Layout-aside">
+    <div class="Layout-principal">
+        <div class="theme-container-global">
+            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
+        <header class="Layout-mobile-header">
+            <img src="logo/logo.svg" alt="Logo">
+            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
+        </header>
+        <aside class="Layout-aside">
             <div class="Layout-aside__logo">
-                <img src="Videos/icons/main logo.PNG" alt="Logo do site">
-                <h2>Grupo de TI</h2>
+                <img src="logo/logo.svg" alt="Logo do site">
+                <h2>Build and Learn TI</h2>
                 <p>Tecnologias de Informação</p>
             </div>
             <nav class="Layout-aside__nav">
@@ -17,124 +45,124 @@
                     <li><a href="Inicio.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
                     <li><a href="Materiais.html">Materiais</a></li>
-                    <li><a href="Eventos.html">Eventos</a></li>
+                    <li><a href="Eventos.html" class="active">Eventos</a></li>
                     <li><a href="Projectos.html">Projectos</a></li>
                     <li><a href="Contacto.html">Contato</a></li>
                 </ul>
-                <div>
-                    <h4>GitHub</h4>
-                    <p>contribui para o nosso repositorio</p><a href="#">ver repositorio</a>
-                </div>
             </nav>
         </aside>
         <main class="Layout-main">
             <section class="lista-eventos">
                 <p>AGENDA</p>
                 <h2>Eventos & Formações</h2>
-                <p>Workshops, formcações, hackathons e oportunidades para o grupo crescer junto. </p>
+                <p>Workshops, formações, hackathons e oportunidades para o grupo crescer junto. </p>
                 <p>PRÓXIMOS EVENTOS(4)</p>
                 <article class="cartao-evento">
                     <div class="evento-data-bloco">
-                    <span class="data-dia texto-azul">20</span>
-                    <span class="data-mes texto-azul">Jul</span>
+                        <span class="data-dia texto-azul">20</span>
+                        <span class="data-mes texto-azul">Jul</span>
                     </div>
-                    
+
                     <div class="evento-conteudo">
-                    <div class="evento-cabecalho">
-                        <h3 class="evento-titulo">Workshop: Git & GitHub para Iniciantes</h3>
-                        <span class="etiqueta etiqueta-azul">Workshop</span>
-                    </div>
-                    <time class="evento-horario" datetime="2025-07-20T15:00">20 Jul 2025 às 15:00</time>
-                    <p class="evento-descricao">Sessão prática de introdução ao controlo de versões com Git e GitHub. Ideal para quem está a começar.</p>
+                        <div class="evento-cabecalho">
+                            <h3 class="evento-titulo">Workshop: Git & GitHub para Iniciantes</h3>
+                            <span class="etiqueta etiqueta-azul">Workshop</span>
+                        </div>
+                        <time class="evento-horario" datetime="2025-07-20T15:00">20 Jul 2025 às 15:00</time>
+                        <p class="evento-descricao">Sessão prática de introdução ao controlo de versões com Git e
+                            GitHub. Ideal para quem está a começar.</p>
                     </div>
 
                     <div class="evento-acao">
-                    <a href="#" class="btn-inscrever btn-laranja">Inscrever<a>
+                        <a href="#" class="btn-inscrever btn-primario">Inscrever</a>
                     </div>
                 </article>
 
                 <article class="cartao-evento">
                     <div class="evento-data-bloco">
-                    <span class="data-dia texto-verde">27</span>
-                    <span class="data-mes texto-verde">Jul</span>
+                        <span class="data-dia texto-verde">27</span>
+                        <span class="data-mes texto-verde">Jul</span>
                     </div>
-                    
+
                     <div class="evento-conteudo">
-                    <div class="evento-cabecalho">
-                        <h3 class="evento-titulo">Formação: HTML & CSS do Zero</h3>
-                        <span class="etiqueta etiqueta-verde">Formação</span>
-                    </div>
-                    <time class="evento-horario" datetime="2025-07-27T14:00">27 Jul 2025 às 14:00</time>
-                    <p class="evento-descricao">Aprende a criar páginas web com HTML e CSS. Sessão estruturada para membros sem experiência prévia.</p>
+                        <div class="evento-cabecalho">
+                            <h3 class="evento-titulo">Formação: HTML & CSS do Zero</h3>
+                            <span class="etiqueta etiqueta-verde">Formação</span>
+                        </div>
+                        <time class="evento-horario" datetime="2025-07-27T14:00">27 Jul 2025 às 14:00</time>
+                        <p class="evento-descricao">Aprende a criar páginas web com HTML e CSS. Sessão estruturada para
+                            membros sem experiência prévia.</p>
                     </div>
 
                     <div class="evento-acao">
-                    <a href="#" class="btn-inscrever btn-laranja">Inscrever<a>
+                        <a href="#" class="btn-inscrever btn-primario">Inscrever</a>
                     </div>
                 </article>
 
                 <article class="cartao-evento">
                     <div class="evento-data-bloco">
-                    <span class="data-dia texto-roxo">10</span>
-                    <span class="data-mes texto-roxo">Ago</span>
+                        <span class="data-dia texto-vermelho">10</span>
+                        <span class="data-mes texto-vermelho">Ago</span>
                     </div>
-                    
+
                     <div class="evento-conteudo">
-                    <div class="evento-cabecalho">
-                        <h3 class="evento-titulo">Hackathon Interno do Grupo</h3>
-                        <span class="etiqueta etiqueta-roxo">Hackathon</span>
-                    </div>
-                    <time class="evento-horario" datetime="2025-08-10T09:00">10 Ago 2025 às 09:00</time>
-                    <p class="evento-descricao">Competição interna de 8 horas onde as equipas desenvolvem soluções para desafios reais do grupo.</p>
+                        <div class="evento-cabecalho">
+                            <h3 class="evento-titulo">Hackathon Interno do Grupo</h3>
+                            <span class="etiqueta etiqueta-vermelho">Hackathon</span>
+                        </div>
+                        <time class="evento-horario" datetime="2025-08-10T09:00">10 Ago 2025 às 09:00</time>
+                        <p class="evento-descricao">Competição interna de 8 horas onde as equipas desenvolvem soluções
+                            para desafios reais do grupo.</p>
                     </div>
 
                     <div class="evento-acao">
-                    <a href="#" class="btn-inscrever btn-laranja">Inscrever<a>
+                        <a href="#" class="btn-inscrever btn-primario">Inscrever</a>
                     </div>
                 </article>
 
                 <article class="cartao-evento">
                     <div class="evento-data-bloco">
-                    <span class="data-dia texto-laranja">31</span>
-                    <span class="data-mes texto-laranja">Jul</span>
+                        <span class="data-dia texto-amarelo">31</span>
+                        <span class="data-mes texto-amarelo">Jul</span>
                     </div>
-                    
+
                     <div class="evento-conteudo">
-                    <div class="evento-cabecalho">
-                        <h3 class="evento-titulo">Apresentação do Portal v1.0</h3>
-                        <span class="etiqueta etiqueta-laranja">Apresentação</span>
-                    </div>
-                    <time class="evento-horario" datetime="2025-07-31T16:00">31 Jul 2025 às 16:00</time>
-                    <p class="evento-descricao">Apresentação oficial da primeira versão do portal do grupo. Todos os membros são convidados.</p>
+                        <div class="evento-cabecalho">
+                            <h3 class="evento-titulo">Apresentação do Portal v1.0</h3>
+                            <span class="etiqueta etiqueta-amarelo">Apresentação</span>
+                        </div>
+                        <time class="evento-horario" datetime="2025-07-31T16:00">31 Jul 2025 às 16:00</time>
+                        <p class="evento-descricao">Apresentação oficial da primeira versão do portal do grupo. Todos os
+                            membros são convidados.</p>
                     </div>
 
                     <div class="evento-acao">
-                    <a href="#" class="btn-inscrever btn-laranja">Inscrever<a>
+                        <a href="#" class="btn-inscrever btn-primario">Inscrever</a>
                     </div>
                 </article>
                 <p>EVENTOS PASSADOS</p>
                 <article class="cartao-evento">
                     <div class="evento-data-bloco">
-                        <svg width="12" height="10" viewBox="0 0 12 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 5L4.5 8.5L11 1" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
+                        <i class="fa-solid fa-check"></i>
                     </div>
-                    
+
                     <div class="evento-conteudo">
-                    <div class="evento-cabecalho">
-                        <h3 class="evento-titulo">Reunião de Arranque do Projecto</h3>
-                    </div>
-                    <time class="evento-horario" datetime="2025-07-31T16:00">5 Jul 2025</time>
+                        <div class="evento-cabecalho">
+                            <h3 class="evento-titulo">Reunião de Arranque do Projecto</h3>
+                        </div>
+                        <time class="evento-horario" datetime="2025-07-31T16:00">5 Jul 2025</time>
                     </div>
 
                     <div class="evento-acao">
-                    <button class="btn-inscrever btn-laranja">concluido</button>
+                        <button class="btn-concluido">Concluído</button>
                     </div>
                 </article>
 
 
             </section>
         </main>
-    
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
