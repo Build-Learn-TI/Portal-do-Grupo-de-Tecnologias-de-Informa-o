@@ -1,30 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Materiais</title>
+    <title>Materiais e Cursos - Build and Learn TI</title>
+    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <link rel="stylesheet" href="estilo-portal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
+        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
-    <aside class="Layout-aside">
+    <div class="Layout-principal">
+        <div class="theme-container-global">
+            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <line x1="12" y1="1" x2="12" y2="3"></line>
+                    <line x1="12" y1="21" x2="12" y2="23"></line>
+                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                    <line x1="1" y1="12" x2="3" y2="12"></line>
+                    <line x1="21" y1="12" x2="23" y2="12"></line>
+                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+            </button>
+        </div>
+        <header class="Layout-mobile-header">
+            <img src="logo/logo.svg" alt="Logo">
+            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
+        </header>
+        <aside class="Layout-aside">
             <div class="Layout-aside__logo">
-                <img src="Videos/icons/main logo.PNG" alt="Logo do site">
-                <h2>Grupo de TI</h2>
+                <img src="logo/logo.svg" alt="Logo do site">
+                <h2>Build and Learn TI</h2>
                 <p>Tecnologias de Informação</p>
             </div>
             <nav class="Layout-aside__nav">
                 <ul>
                     <li><a href="Inicio.html">Início</a></li>
                     <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="Materiais.html">Materiais</a></li>
+                    <li><a href="Materiais.html" class="active">Materiais</a></li>
                     <li><a href="Eventos.html">Eventos</a></li>
                     <li><a href="Projectos.html">Projectos</a></li>
                     <li><a href="Contacto.html">Contato</a></li>
                 </ul>
-                <div>
-                    <h4>GitHub</h4>
-                    <p>contribui para o nosso repositorio</p><a href="#">ver repositorio</a>
-                </div>
             </nav>
         </aside>
         <main class="Layout-main">
@@ -40,114 +64,116 @@
                 <section class="grade-cursos">
                     <article class="cartao-curso" data-category="programacao">
                         <div class="cartao-icone">
-                        <img src="icone-globo.svg" alt="Ícone Web">
+                            <i class="fa-solid fa-globe fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">Introdução ao HTML & CSS</h3>
                         <p class="cartao-descricao">Aprende a estruturar e estilizar páginas web do zero.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="programacao">
                         <div class="cartao-icone">
-                        <img src="icone-raio.svg" alt="Ícone Raio">
+                            <i class="fa-solid fa-bolt fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">JavaScript Básico</h3>
                         <p class="cartao-descricao">Fundamentos de JavaScript para interactividade na web.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="github">
                         <div class="cartao-icone">
-                        <img src="icone-link.svg" alt="Ícone Link">
+                            <i class="fa-solid fa-link fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">Git & GitHub Essentials</h3>
                         <p class="cartao-descricao">Controlo de versões, branches, commits e pull requests.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="design">
                         <div class="cartao-icone">
-                        <img src="icone-paleta.svg" alt="Ícone Paleta de Cores">
+                            <i class="fa-solid fa-palette fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">Figma para Iniciantes</h3>
                         <p class="cartao-descricao">Design de interfaces com a ferramenta mais usada no mercado.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="programacao">
                         <div class="cartao-icone">
-                        <img src="icone-atomo.svg" alt="Ícone Átomo">
+                            <i class="fa-solid fa-atom fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">React do Zero</h3>
                         <p class="cartao-descricao">Criação de interfaces modernas com React e componentes.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta intermedio">Intermédio</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta intermedio">Intermédio</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="dados">
                         <div class="cartao-icone">
-                        <img src="icone-gaveta.svg" alt="Ícone Arquivo/Gaveta">
+                            <i class="fa-solid fa-database fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">SQL e Bases de Dados</h3>
                         <p class="cartao-descricao">Fundamentos de bases de dados relacionais com SQL.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="programacao">
                         <div class="cartao-icone">
-                        <img src="icone-python.svg" alt="Ícone Logo Python">
+                            <i class="fa-brands fa-python fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">Python para Todos</h3>
                         <p class="cartao-descricao">Automação, scripts e análise de dados com Python.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="redes">
                         <div class="cartao-icone">
-                        <img src="icone-satelite.svg" alt="Ícone Satélite">
+                            <i class="fa-solid fa-satellite-dish fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">Fundamentos de Redes</h3>
                         <p class="cartao-descricao">Protocolos, endereçamento IP e arquitectura de redes.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta iniciante">Iniciante</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta iniciante">Iniciante</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
 
                     <article class="cartao-curso" data-category="design">
                         <div class="cartao-icone">
-                        <img src="icone-monitor.svg" alt="Ícone Monitor">
+                            <i class="fa-solid fa-desktop fa-2x"></i>
                         </div>
                         <h3 class="cartao-titulo">UI/UX Design Principles</h3>
                         <p class="cartao-descricao">Boas práticas de usabilidade e experiência do utilizador.</p>
                         <div class="cartao-rodape">
-                        <span class="etiqueta intermedio">Intermédio</span>
-                        <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
+                            <span class="etiqueta intermedio">Intermédio</span>
+                            <a href="#" class="cartao-link">Ver Recurso &rarr;</a>
                         </div>
                     </article>
                 </section>
             </div>
         </main>
-    
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
