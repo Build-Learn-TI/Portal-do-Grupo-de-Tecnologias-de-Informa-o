@@ -1,46 +1,84 @@
 # Build & Learn TI
 
-Portal oficial da comunidade **Build & Learn TI**, criado para partilhar materiais de aprendizagem, divulgar eventos e oportunidades e apresentar projectos colaborativos na área das Tecnologias de Informação.
+Portal oficial da comunidade **Build & Learn TI**, criado para apresentar o grupo, centralizar materiais de aprendizagem, divulgar eventos e oportunidades e acompanhar projectos colaborativos na área das Tecnologias de Informação.
 
-## Sobre a comunidade
+## Estado do projecto
 
-A Build & Learn TI é uma comunidade criada por estudantes da Licenciatura em Engenharia e Ciências da Computação do ISUTC.
+O portal encontra-se em desenvolvimento na branch `dev`. A branch `main` mantém apenas a versão estável e aprovada.
 
-O grupo promove a aprendizagem contínua, a colaboração, a partilha de conhecimentos e o desenvolvimento de competências técnicas e profissionais.
+Funcionalidades já presentes:
 
-## Objectivos
-
-- Incentivar o estudo contínuo das Tecnologias de Informação;
-- Promover a troca de conhecimentos entre os membros;
-- Desenvolver projectos práticos;
-- Divulgar empregos, estágios, bolsas, eventos e formações;
-- Incentivar a participação em competições tecnológicas;
-- Preparar os membros para o mercado de trabalho.
+- Seis páginas HTML ligadas entre si;
+- Layout responsivo com menu lateral e cabeçalho móvel;
+- Modo claro e escuro;
+- Página de materiais com categorias;
+- Página de eventos e formações;
+- Página de projectos e progresso;
+- Formulário e canais de contacto;
+- Logótipo centralizado na pasta `logo`.
 
 ## Tecnologias utilizadas
 
 - HTML5
 - CSS3
 - JavaScript
+- Font Awesome
 - Git e GitHub
-- GitHub Pages
+- GitHub Pages, na fase de publicação
 
-## Estrutura do projecto
+## Estrutura actual do projecto
 
 ```text
-portal-build-learn-ti/
-├── index.html
-├── style.css
-├── script.js
-├── assets/
-│   ├── images/
-│   └── icons/
+Portal-do-Grupo-de-Tecnologias-de-Informa-o/
 ├── .github/
 │   ├── ISSUE_TEMPLATE/
+│   │   ├── bug.md
+│   │   └── tarefa.md
 │   └── pull_request_template.md
+├── assets/
+│   ├── icons/
+│   │   └── .gitkeep
+│   └── images/
+│       └── .gitkeep
+├── logo/
+│   └── logo.svg
+├── Contacto.html
+├── Eventos.html
+├── Inicio.html
+├── Materiais.html
+├── Projectos.html
+├── sobre.html
+├── estilo-portal.css
+├── script.js
+├── CODE_OF_CONDUCT.md
 ├── CONTRIBUTING.md
 └── README.md
 ```
+
+## Páginas do portal
+
+- `Inicio.html`: página inicial do portal;
+- `sobre.html`: apresentação, valores, objectivos e equipa;
+- `Materiais.html`: cursos e recursos de aprendizagem;
+- `Eventos.html`: eventos, formações e oportunidades;
+- `Projectos.html`: progresso e projectos da comunidade;
+- `Contacto.html`: formulário e canais de contacto.
+
+Todas as páginas utilizam:
+
+```text
+estilo-portal.css
+script.js
+logo/logo.svg
+```
+
+## Executar localmente
+
+1. Clone o repositório;
+2. Entre na pasta do projecto;
+3. Abra `Inicio.html` no navegador.
+
+Também pode ser utilizada uma extensão de servidor local, como Live Server, para testar navegação, caminhos e JavaScript.
 
 ## Equipa e responsabilidades
 
@@ -59,18 +97,18 @@ portal-build-learn-ti/
 - `test/nome-do-teste`: testes e revisão;
 - `chore/nome-da-tarefa`: configuração, documentação e publicação.
 
-Cada tarefa deve ser desenvolvida na branch indicada na respectiva issue. Depois, deve ser aberto um Pull Request para `dev`. A branch `main` só recebe alterações aprovadas e testadas.
+Cada membro deve trabalhar apenas na branch indicada na respectiva issue. Depois, deve abrir um Pull Request para `dev`. A branch `main` só recebe alterações testadas e aprovadas.
 
-## Issues iniciais
+## Issues do projecto
 
-1. Criar a estrutura HTML da página inicial;
-2. Criar o CSS responsivo do portal;
-3. Adicionar apresentação, valores e objectivos;
-4. Criar a secção de recursos de aprendizagem;
-5. Criar as secções de eventos e oportunidades;
-6. Implementar menu móvel e interacções com JavaScript;
+1. Rever e completar a estrutura HTML da página inicial;
+2. Rever e melhorar o CSS responsivo;
+3. Rever apresentação, valores e objectivos;
+4. Rever a secção de recursos de aprendizagem;
+5. Rever eventos e oportunidades;
+6. Completar as interacções com JavaScript;
 7. Testar responsividade, acessibilidade e funcionamento;
-8. Publicar o portal no GitHub Pages.
+8. Preparar e publicar no GitHub Pages.
 
 ## Convenção de commits
 
@@ -83,10 +121,10 @@ test: adicionar ou executar testes
 chore: configurar ferramentas ou publicação
 ```
 
+## Publicação
+
+Antes da publicação no GitHub Pages, será criado um `index.html` que encaminhe para `Inicio.html`, ou a página inicial será preparada como entrada oficial. O endereço público será adicionado aqui depois da publicação.
+
 ## Como contribuir
 
 Consulte o ficheiro [`CONTRIBUTING.md`](CONTRIBUTING.md) antes de iniciar uma tarefa ou abrir um Pull Request.
-
-## Estado do projecto
-
-Projecto em desenvolvimento. A publicação será feita no GitHub Pages após a conclusão dos testes e aprovação da equipa.
