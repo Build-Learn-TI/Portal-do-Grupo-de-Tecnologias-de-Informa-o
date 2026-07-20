@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+    <!-- Metadados: charset, viewport responsivo, título da aba e favicon -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Início - Build and Learn TI</title>
     <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <!-- CSS próprio do portal (estilo-portal.css) + ícones Font Awesome via CDN -->
     <link rel="stylesheet" href="estilo-portal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
         integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
@@ -14,6 +16,8 @@
 
 <body>
     <div class="Layout-principal">
+        <!-- Botão de alternar tema claro/escuro. O ícone SVG é estático;
+             a troca de data-theme + persistência em localStorage está em script.js -->
         <div class="theme-container-global">
             <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -30,10 +34,14 @@
                 </svg>
             </button>
         </div>
+        <!-- Cabeçalho visível apenas em mobile/tablet (< 900px, ver media query em estilo-portal.css):
+             logo + botão hambúrguer que abre a barra lateral (.menu-aberto) -->
         <header class="Layout-mobile-header">
             <img src="logo/logo.svg" alt="Logo">
             <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
         </header>
+        <!-- Barra lateral de navegação: fixa no desktop, deslizante em mobile.
+             O link da página actual leva a classe "active" (aplicada também automaticamente por script.js) -->
         <aside class="Layout-aside">
             <div class="Layout-aside__logo">
                 <img src="logo/logo.svg" alt="Logo do site">
@@ -51,8 +59,10 @@
                 </ul>
             </nav>
         </aside>
+        <!-- Conteúdo principal da página Início -->
         <main class="Layout-main">
             <section class="Layout-inicio__content">
+                <!-- Secção de destaque (hero) com título e chamadas de acção -->
                 <section class="parte-superior">
                     <h1>BEM-VINDO AO PORTAL</h1>
                     <p>Grupo de Tecnologias e Informação</p>
@@ -61,6 +71,7 @@
                         <a href="Projectos.html" class="btn-secundario">ver projectos</a>
                     </div>
                 </section>
+                <!-- Estatísticas rápidas do grupo (valores fixos no HTML) -->
                 <section class="layout-info">
                     <div class="membros-activos">
                         <h2>12</h2>
@@ -79,6 +90,7 @@
                         <p>portal publicado</p>
                     </div>
                 </section>
+                <!-- Cartões de atalho para as restantes páginas do portal -->
                 <section class="oque-portal-oferece">
                     <h2>O que o portal oferece</h2>
                     <div class="grelha-ofertas">
@@ -104,6 +116,7 @@
                         </a>
                     </div>
                 </section>
+                <!-- Chamada para contribuir no repositório GitHub do projecto -->
                 <section class="github-rodape">
                     <h4>GitHub</h4>
                     <p>contribui para o nosso repositorio</p>
@@ -111,6 +124,8 @@
                 </section>
         </main>
     </div>
+    <!-- Script global partilhado por todas as páginas: tema, menu mobile, filtro de
+         materiais, validação do formulário de contacto, indicador de página activa, etc. -->
     <script src="script.js"></script>
 </body>
 

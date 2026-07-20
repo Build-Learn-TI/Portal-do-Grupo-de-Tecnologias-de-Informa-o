@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+    <!-- Metadados: charset, viewport responsivo, título da aba e favicon -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nós - Build and Learn TI</title>
     <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
+    <!-- CSS próprio do portal (estilo-portal.css) + ícones Font Awesome via CDN -->
     <link rel="stylesheet" href="estilo-portal.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
         integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
@@ -14,6 +16,8 @@
 
 <body>
     <div class="Layout-principal">
+        <!-- Botão de alternar tema claro/escuro. O ícone SVG é estático;
+             a troca de data-theme + persistência em localStorage está em script.js -->
         <div class="theme-container-global">
             <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -30,10 +34,14 @@
                 </svg>
             </button>
         </div>
+        <!-- Cabeçalho visível apenas em mobile/tablet (< 900px, ver media query em estilo-portal.css):
+             logo + botão hambúrguer que abre a barra lateral (.menu-aberto) -->
         <header class="Layout-mobile-header">
             <img src="logo/logo.svg" alt="Logo">
             <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
         </header>
+        <!-- Barra lateral de navegação: fixa no desktop, deslizante em mobile.
+             O link da página actual leva a classe "active" -->
         <aside class="Layout-aside">
             <div class="Layout-aside__logo">
                 <img src="logo/logo.svg" alt="Logo do site">
@@ -51,18 +59,21 @@
                 </ul>
             </nav>
         </aside>
+        <!-- Conteúdo principal da página Sobre -->
         <main class="Layout-main">
             <p>QUEM SOMOS</p>
             <h2>Sobre o Grupo</h2>
             <p>O Grupo de Tecnologias de Informação é uma comunidade de aprendizagem criada para organizar a identidade
                 digital dos seus membros, centralizar materiais, divulgar eventos e iniciar a prática de colaboração com
                 GitHub.</p>
+            <!-- Objectivo/missão do grupo, em destaque -->
             <section class="objetivo-principal">
                 <p>OBJECTIVO PRINCIPAL</p>
                 <p>"Criar um portal digital do grupo que funcione como ponto central de apresentação, partilha de
                     conhecimento e organização de projectos, incentivando a aprendizagem contínua, a colaboração e o
                     crescimento profissional dos membros na área de Tecnologias de Informação."</p>
             </section>
+            <!-- Grelha de valores do grupo (6 cartões) -->
             <div class="grelha-valores">
                 <article class="cartao-valor">
                     <div class="cartao-valor__icone"><i class="fa-solid fa-handshake fa-2x"></i></div>
@@ -108,6 +119,7 @@
                 </article>
 
             </div>
+            <!-- Lista da equipa: cada membro tem iniciais como avatar, nome, cargo e área/etiqueta -->
             <section class="seccao-equipa">
                 <h2 class="titulo-equipa">EQUIPA (12 MEMBROS)</h2>
                 <ul class="grelha-membros">
@@ -215,6 +227,8 @@
             </section>
         </main>
     </div>
+    <!-- Script global partilhado por todas as páginas: tema, menu mobile, filtro de
+         materiais, validação do formulário de contacto, indicador de página activa, etc. -->
     <script src="script.js"></script>
 </body>
 
