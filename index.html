@@ -1,132 +1,214 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-PT">
 <head>
-    <!-- Metadados: charset, viewport responsivo, título da aba e favicon -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Início - Build and Learn TI</title>
-    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
-    <!-- CSS próprio do portal (estilo-portal.css) + ícones Font Awesome via CDN -->
-    <link rel="stylesheet" href="estilo-portal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portal do Grupo de Tecnologias de Informação - Build & Learn">
+  <meta name="theme-color" content="#1B4D3E">
+  <title>Portal do Grupo de TI - Build & Learn</title>
+  <link rel="stylesheet" href="estilo-portal-novo.css">
+  <link rel="icon" type="image/png" href="logo/Build_Learn_Aneis_03_Monocromatico_Transparente.webp">
 </head>
-
 <body>
-    <div class="Layout-principal">
-        <!-- Botão de alternar tema claro/escuro. O ícone SVG é estático;
-             a troca de data-theme + persistência em localStorage está em script.js -->
-        <div class="theme-container-global">
-            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </div>
-        <!-- Cabeçalho visível apenas em mobile/tablet (< 900px, ver media query em estilo-portal.css):
-             logo + botão hambúrguer que abre a barra lateral (.menu-aberto) -->
-        <header class="Layout-mobile-header">
-            <img src="logo/logo.svg" alt="Logo">
-            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
-        </header>
-        <!-- Barra lateral de navegação: fixa no desktop, deslizante em mobile.
-             O link da página actual leva a classe "active" (aplicada também automaticamente por script.js) -->
-        <aside class="Layout-aside">
-            <div class="Layout-aside__logo">
-                <img src="logo/logo.svg" alt="Logo do site">
-                <h2>Build and Learn TI</h2>
-                <p>Tecnologias de Informação</p>
-            </div>
-            <nav class="Layout-aside__nav">
-                <ul>
-                    <li><a href="Inicio.html" class="active">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="Materiais.html">Materiais</a></li>
-                    <li><a href="Eventos.html">Eventos</a></li>
-                    <li><a href="Projectos.html">Projectos</a></li>
-                    <li><a href="Contacto.html">Contato</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <!-- Conteúdo principal da página Início -->
-        <main class="Layout-main">
-            <section class="Layout-inicio__content">
-                <!-- Secção de destaque (hero) com título e chamadas de acção -->
-                <section class="parte-superior">
-                    <h1>BEM-VINDO AO PORTAL</h1>
-                    <p>Grupo de Tecnologias e Informação</p>
-                    <div class="botoes-acao">
-                        <a href="sobre.html" class="btn-primario">conhecer grupo &rarr;</a>
-                        <a href="Projectos.html" class="btn-secundario">ver projectos</a>
-                    </div>
-                </section>
-                <!-- Estatísticas rápidas do grupo (valores fixos no HTML) -->
-                <section class="layout-info">
-                    <div class="membros-activos">
-                        <h2>12</h2>
-                        <p>membros activos</p>
-                    </div>
-                    <div class="fases-projecto">
-                        <h2>7</h2>
-                        <p>fases do Projecto</p>
-                    </div>
-                    <div class="equipas">
-                        <h2>5</h2>
-                        <p>equipas</p>
-                    </div>
-                    <div class="portal-publicado">
-                        <h2>1</h2>
-                        <p>portal publicado</p>
-                    </div>
-                </section>
-                <!-- Cartões de atalho para as restantes páginas do portal -->
-                <section class="oque-portal-oferece">
-                    <h2>O que o portal oferece</h2>
-                    <div class="grelha-ofertas">
-                        <a href="sobre.html" class="cartao-oferta">
-                            <div class="cartao-oferta__icone"><i class="fa-solid fa-circle-info fa-2x"></i></div>
-                            <h3>Sobre nós</h3>
-                            <p>objectivos e valores do grupo</p>
-                        </a>
-                        <a href="Materiais.html" class="cartao-oferta">
-                            <div class="cartao-oferta__icone"><i class="fa-solid fa-atom fa-2x"></i></div>
-                            <h3>Materiais</h3>
-                            <p>Cursos e recursos recomendados</p>
-                        </a>
-                        <a href="Eventos.html" class="cartao-oferta">
-                            <div class="cartao-oferta__icone"><i class="fa-solid fa-calendar-days fa-2x"></i></div>
-                            <h3>Eventos</h3>
-                            <p>Workshops e oportunidades</p>
-                        </a>
-                        <a href="Projectos.html" class="cartao-oferta">
-                            <div class="cartao-oferta__icone"><i class="fa-brands fa-github fa-2x"></i></div>
-                            <h3>Projectos</h3>
-                            <p>trabalhos colaborativos</p>
-                        </a>
-                    </div>
-                </section>
-                <!-- Chamada para contribuir no repositório GitHub do projecto -->
-                <section class="github-rodape">
-                    <h4>GitHub</h4>
-                    <p>contribui para o nosso repositorio</p>
-                    <a href="https://github.com/Build-Learn-TI/Portal-do-Grupo-de-Tecnologias-de-Informa-o" target="_blank" rel="noopener noreferrer">ver repositorio</a>
-                </section>
-        </main>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="Inicio-novo.html" class="logo">
+        <img src="logo/Build_Learn_Aneis_01_Principal.webp" alt="Build & Learn Logo">
+        <span>Build & Learn IT</span>
+      </a>
+      
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      
+      <nav>
+        <a href="Inicio-novo.html" class="ativo">Início</a>
+        <a href="sobre-novo.html">Sobre</a>
+        <a href="Materiais-novo.html">Materiais</a>
+        <a href="Eventos-novo.html">Eventos</a>
+        <a href="Projectos-novo.html">Projetos</a>
+        <a href="Contacto-novo.html">Contacto</a>
+        <button id="botao-tema" class="btn btn-secundario" aria-label="Alternar tema">🌙</button>
+      </nav>
     </div>
-    <!-- Script global partilhado por todas as páginas: tema, menu mobile, filtro de
-         materiais, validação do formulário de contacto, indicador de página activa, etc. -->
-    <script src="script.js"></script>
-</body>
+  </header>
 
+  <!-- HERO SECTION -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Da teoria à prática.<br>Da prática ao impacto.</h1>
+      <p>Uma comunidade onde estudantes e jovens profissionais de tecnologia aprendem, colaboram e transformam conhecimento em experiência real.</p>
+      
+      <div class="hero-buttons">
+        <a href="#quem-somos" class="btn btn-primario">Conhecer a Comunidade</a>
+        <a href="Contacto-novo.html" class="btn btn-secundario">Candidatar-me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUEM SOMOS -->
+  <section id="quem-somos">
+    <div class="section-titulo">Quem Somos</div>
+    <h2 class="section-heading">Uma comunidade exigente com espaço para crescer.</h2>
+    
+    <p>O Build & Learn é uma comunidade seletiva de estudantes e jovens profissionais de tecnologia, criada para partilhar conhecimento e oportunidades que ajudem os seus membros a crescer na área. Criamos um ambiente onde o conhecimento teórico adquirido na universidade se transforma em prática real. A entrada é avaliada e priorizamos qualidade, compromisso e contribuição ativa.</p>
+    
+    <p style="margin-top: 1.5rem; font-weight: 600; color: #1B4D3E;">Qualidade, compromisso e contribuição ativa.</p>
+  </section>
+
+  <!-- DIREÇÃO -->
+  <section id="direcao" style="background-color: #F5F1E8;">
+    <div class="section-titulo">Direção</div>
+    <h2 class="section-heading">O que nos orienta</h2>
+    <p style="margin-bottom: 2rem; text-align: center; color: #666;">Uma ligação clara entre propósito, prática e o impacto que queremos criar.</p>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-numero">Propósito</div>
+        <div class="card-descricao">Encurtar a distância entre aprender e fazer, criando oportunidades para que talento, curiosidade e conhecimento se transformem em competência, experiência e impacto.</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-numero">Missão</div>
+        <div class="card-descricao">Criar um ambiente seletivo onde estudantes e jovens profissionais de tecnologia possam transformar conhecimento teórico em experiência prática, desenvolvendo projetos reais, colaborando entre si e crescendo técnica e profissionalmente.</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-numero">Visão</div>
+        <div class="card-descricao">Formar uma geração de profissionais de tecnologia reconhecidos pela competência técnica, espírito colaborativo e capacidade de criar soluções com impacto.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALORES -->
+  <section id="valores">
+    <div class="section-titulo">Os Nossos Valores</div>
+    <h2 class="section-heading">Como escolhemos agir</h2>
+    <p style="margin-bottom: 2rem; text-align: center; color: #666;">Princípios que orientam a participação, a qualidade do trabalho e as relações dentro da comunidade.</p>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-numero">01</div>
+        <div class="card-titulo">Aprendizagem contínua</div>
+        <div class="card-descricao">Nunca parar de evoluir tecnicamente.</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-numero">02</div>
+        <div class="card-titulo">Consistência</div>
+        <div class="card-descricao">Presença e entrega regulares, não apenas picos isolados de esforço.</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-numero">03</div>
+        <div class="card-titulo">Colaboração</div>
+        <div class="card-descricao">Construir em conjunto e partilhar conhecimento, em vez de trabalhar de forma isolada.</div>
+      </div>
+      
+      <div class="card">
+        <div class="card-numero">04</div>
+        <div class="card-titulo">Respeito</div>
+        <div class="card-descricao">Respeitar os membros, a liderança e o trabalho desenvolvido por cada pessoa.</div>
+      </div>
+      
+      <div class="card card-destaque">
+        <div class="card-numero">05</div>
+        <div class="card-titulo">Responsabilidade</div>
+        <div class="card-descricao">Cumprir aquilo que cada membro se compromete a entregar.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MATERIAIS E RECURSOS -->
+  <section id="materiais" style="background-color: #F5F1E8;">
+    <div class="section-titulo">Recursos</div>
+    <h2 class="section-heading">Materiais de Aprendizagem</h2>
+    
+    <div class="filtros">
+      <button class="filtro-btn ativo" data-filtro="todos">Todos</button>
+      <button class="filtro-btn" data-filtro="programacao">Programação</button>
+      <button class="filtro-btn" data-filtro="design">Design</button>
+      <button class="filtro-btn" data-filtro="github">GitHub</button>
+      <button class="filtro-btn" data-filtro="redes">Redes</button>
+    </div>
+    
+    <div class="cards-grid">
+      <div class="card" data-categoria="programacao">
+        <div class="card-titulo">Fundamentos de Programação</div>
+        <div class="card-descricao">Aprenda os conceitos básicos de programação com exemplos práticos.</div>
+        <a href="https://www.w3schools.com/python/" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+      
+      <div class="card" data-categoria="programacao">
+        <div class="card-titulo">React.js - Desenvolvimento Web</div>
+        <div class="card-descricao">Guia completo para aprender React e construir aplicações web modernas.</div>
+        <a href="https://react.dev/" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+      
+      <div class="card" data-categoria="github">
+        <div class="card-titulo">GitHub Skills</div>
+        <div class="card-descricao">Cursos interativos do GitHub para aprender controlo de versão.</div>
+        <a href="https://skills.github.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+      
+      <div class="card" data-categoria="design">
+        <div class="card-titulo">Design de Interfaces</div>
+        <div class="card-descricao">Princípios de UX/UI para criar interfaces atrativas e funcionais.</div>
+        <a href="https://www.figma.com/resources/learn-design/" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+      
+      <div class="card" data-categoria="redes">
+        <div class="card-titulo">Redes de Computadores</div>
+        <div class="card-descricao">Conceitos fundamentais de redes e protocolos de comunicação.</div>
+        <a href="https://www.cisco.com/c/en/us/training-events/training-certifications/certifications/entry-level-certifications/ccna.html" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+      
+      <div class="card" data-categoria="programacao">
+        <div class="card-titulo">JavaScript Avançado</div>
+        <div class="card-descricao">Técnicas avançadas de JavaScript para desenvolvimento profissional.</div>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide" target="_blank" rel="noopener noreferrer" class="btn btn-primario" style="margin-top: 1rem; display: inline-block;">Aceder</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-secao">
+          <h3>Explorar</h3>
+          <a href="Inicio-novo.html">Início</a>
+          <a href="sobre-novo.html">Sobre</a>
+          <a href="Materiais-novo.html">Materiais</a>
+          <a href="Eventos-novo.html">Eventos</a>
+          <a href="Projectos-novo.html">Projetos</a>
+          <a href="Contacto-novo.html">Contacto</a>
+        </div>
+        
+        <div class="footer-secao">
+          <h3>Comunidade</h3>
+          <a href="https://github.com/Build-Learn-TI" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/company/build-learn-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="Contacto-novo.html">Contacto</a>
+          <a href="Contacto-novo.html">Candidatar-me</a>
+        </div>
+        
+        <div class="footer-secao">
+          <h3>Legal</h3>
+          <a href="#privacidade">Política de Privacidade</a>
+          <a href="#termos">Termos de Uso</a>
+          <a href="#cookies">Política de Cookies</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Build & Learn. Todos os direitos reservados.</div>
+        <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.6);">
+          Conhecimento partilhado, prática real e crescimento conjunto em tecnologia.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script-novo.js"></script>
+</body>
 </html>

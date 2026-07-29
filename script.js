@@ -1,360 +1,362 @@
-/**
- * Script Principal - Portal do Grupo de TI
- * Funcionalidades: Tema, Menu Mobile, Filtro de Materiais, Formulário de Contacto
- * Autor: Soares Nhangave (Front-end)
- * Data: Julho 2026
- */
+/* ============================================
+   PORTAL DO GRUPO DE TECNOLOGIAS DE INFORMAÇÃO
+   Script.js - Versão 2.0 com Correções de Segurança
+   ============================================ */
 
-document.addEventListener('DOMContentLoaded', () => {
-    // ========================================================================
-    // 1. GERENCIAMENTO DE TEMA (Light/Dark Mode)
-    // ========================================================================
-    const themeToggleBtn = document.getElementById('theme-toggle');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+// ============================================
+// CONFIGURAÇÃO INICIAL
+// ============================================
 
-    // Definir tema ao carregar
-    const currentTheme = localStorage.getItem('theme');
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    } else if (currentTheme === 'light') {
-        document.documentElement.setAttribute('data-theme', 'light');
-    } else if (prefersDarkScheme.matches) {
-        document.documentElement.setAttribute('data-theme', 'dark');
-    }
-
-    // Handler do botão de alternar tema
-    if (themeToggleBtn) {
-        themeToggleBtn.addEventListener('click', () => {
-            let theme = document.documentElement.getAttribute('data-theme');
-
-            if (!theme) {
-                theme = prefersDarkScheme.matches ? 'dark' : 'light';
-            }
-
-            const newTheme = theme === 'dark' ? 'light' : 'dark';
-            document.documentElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
-
-            // Melhorar acessibilidade
-            const ariaLabel = newTheme === 'dark' ? 'Alternar para tema claro' : 'Alternar para tema escuro';
-            themeToggleBtn.setAttribute('aria-label', ariaLabel);
-        });
-
-        // Adicionar aria-label inicial
-        const initialLabel = prefersDarkScheme.matches ? 'Alternar para tema claro' : 'Alternar para tema escuro';
-        themeToggleBtn.setAttribute('aria-label', initialLabel);
-    }
-
-    // Ouvir mudanças do sistema se nenhuma preferência foi salva
-    prefersDarkScheme.addEventListener('change', (e) => {
-        if (!localStorage.getItem('theme')) {
-            if (e.matches) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        }
-    });
-
-    // ========================================================================
-    // 2. MENU MOBILE - Toggle e Fechamento
-    // ========================================================================
-    const menuBtn = document.getElementById('mobile-menu-btn');
-    const sidebar = document.querySelector('.Layout-aside');
-    const navLinks = sidebar ? sidebar.querySelectorAll('a') : [];
-
-    if (menuBtn && sidebar) {
-        // Abrir/Fechar menu ao clicar no botão hambúrguer
-        menuBtn.addEventListener('click', () => {
-            sidebar.classList.toggle('menu-aberto');
-            // Melhorar acessibilidade
-            const isOpen = sidebar.classList.contains('menu-aberto');
-            menuBtn.setAttribute('aria-expanded', isOpen);
-        });
-
-        // Fechar menu quando clicar fora
-        document.addEventListener('click', (e) => {
-            if (sidebar.classList.contains('menu-aberto') && !sidebar.contains(e.target) && !menuBtn.contains(e.target)) {
-                sidebar.classList.remove('menu-aberto');
-                menuBtn.setAttribute('aria-expanded', false);
-            }
-        });
-
-        // Fechar menu ao clicar num link de navegação
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                sidebar.classList.remove('menu-aberto');
-                menuBtn.setAttribute('aria-expanded', false);
-            });
-        });
-
-        // Suporte a teclado (ESC para fechar)
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && sidebar.classList.contains('menu-aberto')) {
-                sidebar.classList.remove('menu-aberto');
-                menuBtn.setAttribute('aria-expanded', false);
-                menuBtn.focus();
-            }
-        });
-
-        // Adicionar aria-label inicial
-        menuBtn.setAttribute('aria-label', 'Abrir menu de navegação');
-        menuBtn.setAttribute('aria-expanded', false);
-    }
-
-    // ========================================================================
-    // 3. INDICADOR DE PÁGINA ATIVA
-    // ========================================================================
-    const currentPage = window.location.pathname.split('/').pop() || 'Inicio.html';
-    const navItems = document.querySelectorAll('.Layout-aside__nav a');
-    
-    navItems.forEach(link => {
-        link.classList.remove('active');
-        const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'Inicio.html')) {
-            link.classList.add('active');
-        }
-    });
-
-    // ========================================================================
-    // 4. FILTRO DE MATERIAIS
-    // ========================================================================
-    const filterButtons = document.querySelectorAll('.btn-filtro');
-    const courseCards = document.querySelectorAll('.cartao-curso');
-
-    if (filterButtons.length > 0 && courseCards.length > 0) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const filterValue = button.getAttribute('data-filter');
-
-                // Atualizar estado visual dos botões
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-
-                // Filtrar cartões
-                courseCards.forEach(card => {
-                    const cardCategory = card.getAttribute('data-category');
-                    
-                    if (filterValue === 'todos' || cardCategory === filterValue) {
-                        card.style.display = 'block';
-                        // Adicionar animação suave
-                        card.style.animation = 'fadeInSlide 0.3s ease-out forwards';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
-            });
-        });
-    }
-
-    // ========================================================================
-    // 5. VALIDAÇÃO E ENVIO DO FORMULÁRIO DE CONTACTO
-    // ========================================================================
-    const contactForm = document.querySelector('form');
-    
-    if (contactForm) {
-        const nameInput = contactForm.querySelector('#nome');
-        const emailInput = contactForm.querySelector('#email');
-        const messageInput = contactForm.querySelector('#Messagem');
-        const submitBtn = contactForm.querySelector('button[type="submit"]');
-
-        // Validação em tempo real do email
-        if (emailInput) {
-            emailInput.addEventListener('blur', () => {
-                validateEmail(emailInput);
-            });
-
-            emailInput.addEventListener('input', () => {
-                validateEmail(emailInput);
-            });
-        }
-
-        // Handler de envio do formulário
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            // Validar campos
-            if (!nameInput.value.trim()) {
-                showError(nameInput, 'Nome é obrigatório');
-                return;
-            }
-
-            if (!emailInput.value.trim() || !isValidEmail(emailInput.value)) {
-                showError(emailInput, 'Email inválido');
-                return;
-            }
-
-            if (!messageInput.value.trim()) {
-                showError(messageInput, 'Mensagem é obrigatória');
-                return;
-            }
-
-            // Se tudo estiver válido, mostrar sucesso
-            submitBtn.disabled = true;
-            submitBtn.textContent = 'Enviando...';
-
-            // Simular envio (em produção, usar FormSubmit ou similar)
-            setTimeout(() => {
-                showSuccess('Mensagem enviada com sucesso! Obrigado pelo contacto.');
-                contactForm.reset();
-                submitBtn.disabled = false;
-                submitBtn.textContent = 'Enviar Formulário';
-                clearErrors();
-            }, 1500);
-        });
-    }
-
-    // ========================================================================
-    // 6. FUNÇÕES AUXILIARES
-    // ========================================================================
-
-    /**
-     * Validar formato de email
-     */
-    function isValidEmail(email) {
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return emailRegex.test(email);
-    }
-
-    /**
-     * Validar campo de email
-     */
-    function validateEmail(emailInput) {
-        const email = emailInput.value.trim();
-        
-        if (!email) {
-            clearFieldError(emailInput);
-            return;
-        }
-
-        if (isValidEmail(email)) {
-            clearFieldError(emailInput);
-            emailInput.style.borderColor = '#34A853';
-        } else {
-            showError(emailInput, 'Email inválido');
-        }
-    }
-
-    /**
-     * Mostrar erro num campo
-     */
-    function showError(input, message) {
-        input.style.borderColor = '#EA4335';
-        
-        let errorElement = input.nextElementSibling;
-        if (!errorElement || !errorElement.classList.contains('error-message')) {
-            errorElement = document.createElement('small');
-            errorElement.classList.add('error-message');
-            errorElement.style.color = '#EA4335';
-            errorElement.style.display = 'block';
-            errorElement.style.marginTop = '-1rem';
-            errorElement.style.marginBottom = '1rem';
-            input.parentNode.insertBefore(errorElement, input.nextSibling);
-        }
-        errorElement.textContent = message;
-    }
-
-    /**
-     * Limpar erro de um campo
-     */
-    function clearFieldError(input) {
-        input.style.borderColor = '';
-        const errorElement = input.nextElementSibling;
-        if (errorElement && errorElement.classList.contains('error-message')) {
-            errorElement.remove();
-        }
-    }
-
-    /**
-     * Limpar todos os erros
-     */
-    function clearErrors() {
-        const errorMessages = document.querySelectorAll('.error-message');
-        errorMessages.forEach(msg => msg.remove());
-        
-        const inputs = document.querySelectorAll('input, textarea');
-        inputs.forEach(input => {
-            input.style.borderColor = '';
-        });
-    }
-
-    /**
-     * Mostrar mensagem de sucesso
-     */
-    function showSuccess(message) {
-        const successDiv = document.createElement('div');
-        successDiv.style.cssText = `
-            background-color: #34A853;
-            color: white;
-            padding: 1rem;
-            border-radius: 8px;
-            margin-bottom: 1.5rem;
-            animation: fadeInSlide 0.3s ease-out forwards;
-        `;
-        successDiv.textContent = message;
-
-        const form = document.querySelector('form');
-        if (form) {
-            form.parentNode.insertBefore(successDiv, form);
-            
-            // Remover mensagem após 5 segundos
-            setTimeout(() => {
-                successDiv.style.animation = 'fadeOutSlide 0.3s ease-out forwards';
-                setTimeout(() => successDiv.remove(), 300);
-            }, 5000);
-        }
-    }
-
-    // ========================================================================
-    // 7. SCROLL SUAVE PARA ÂNCORAS
-    // ========================================================================
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            const href = this.getAttribute('href');
-            if (href !== '#' && document.querySelector(href)) {
-                e.preventDefault();
-                document.querySelector(href).scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
-
-    // ========================================================================
-    // 8. MELHORIAS DE PERFORMANCE
-    // ========================================================================
-    // Usar requestAnimationFrame para animações suaves
-    if ('IntersectionObserver' in window) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animation = 'fadeInSlide 0.6s ease-out forwards';
-                    observer.unobserve(entry.target);
-                }
-            });
-        });
-
-        document.querySelectorAll('.Layout-main > *').forEach(el => {
-            observer.observe(el);
-        });
-    }
+document.addEventListener('DOMContentLoaded', function() {
+  inicializarTema();
+  inicializarNavegacao();
+  inicializarFiltros();
+  inicializarFormulario();
+  atualizarIndicadorPagina();
+  configurarScrollSuave();
 });
 
-// ============================================================================
-// ANIMAÇÃO CSS ADICIONAL (para fadeOutSlide)
-// ============================================================================
+// ============================================
+// TEMA CLARO/ESCURO
+// ============================================
+
+function inicializarTema() {
+  const temaSalvo = localStorage.getItem('tema') || 'claro';
+  aplicarTema(temaSalvo);
+
+  const botaoTema = document.getElementById('botao-tema');
+  if (botaoTema) {
+    botaoTema.addEventListener('click', alternarTema);
+  }
+}
+
+function aplicarTema(tema) {
+  if (tema === 'escuro') {
+    document.body.classList.add('dark-mode');
+    localStorage.setItem('tema', 'escuro');
+  } else {
+    document.body.classList.remove('dark-mode');
+    localStorage.setItem('tema', 'claro');
+  }
+}
+
+function alternarTema() {
+  const temaAtual = localStorage.getItem('tema') || 'claro';
+  const novoTema = temaAtual === 'claro' ? 'escuro' : 'claro';
+  aplicarTema(novoTema);
+}
+
+// ============================================
+// NAVEGAÇÃO E MENU MOBILE
+// ============================================
+
+function inicializarNavegacao() {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('nav');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function() {
+      nav.classList.toggle('ativo');
+      menuToggle.setAttribute('aria-expanded', nav.classList.contains('ativo'));
+    });
+
+    // Fechar menu ao clicar em um link
+    const links = nav.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', function() {
+        nav.classList.remove('ativo');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Fechar menu ao pressionar ESC
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && nav.classList.contains('ativo')) {
+        nav.classList.remove('ativo');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Fechar menu ao clicar fora
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        nav.classList.remove('ativo');
+        menuToggle.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  // Suporte a navegação por teclado
+  const navLinks = document.querySelectorAll('nav a');
+  navLinks.forEach((link, index) => {
+    link.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' && index < navLinks.length - 1) {
+        navLinks[index + 1].focus();
+      } else if (e.key === 'ArrowLeft' && index > 0) {
+        navLinks[index - 1].focus();
+      }
+    });
+  });
+}
+
+function atualizarIndicadorPagina() {
+  const links = document.querySelectorAll('nav a');
+  const paginaAtual = window.location.pathname;
+
+  links.forEach(link => {
+    link.classList.remove('ativo');
+    if (link.getAttribute('href') === paginaAtual || 
+        (paginaAtual === '/' && link.getAttribute('href') === 'Inicio.html')) {
+      link.classList.add('ativo');
+    }
+  });
+}
+
+// ============================================
+// FILTRO DE MATERIAIS
+// ============================================
+
+function inicializarFiltros() {
+  const botoesFiltro = document.querySelectorAll('.filtro-btn');
+  const cartoes = document.querySelectorAll('.card[data-categoria]');
+
+  botoesFiltro.forEach(botao => {
+    botao.addEventListener('click', function() {
+      // Remover classe ativo de todos os botões
+      botoesFiltro.forEach(b => b.classList.remove('ativo'));
+      
+      // Adicionar classe ativo ao botão clicado
+      this.classList.add('ativo');
+
+      const categoria = this.getAttribute('data-filtro');
+
+      // Animar filtro
+      cartoes.forEach(card => {
+        if (categoria === 'todos' || card.getAttribute('data-categoria') === categoria) {
+          card.style.animation = 'fadeIn 0.3s ease-in';
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    });
+  });
+}
+
+// Animação de fade-in
 const style = document.createElement('style');
 style.textContent = `
-    @keyframes fadeOutSlide {
-        from {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        to {
-            opacity: 0;
-            transform: translateY(-15px);
-        }
-    }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 `;
 document.head.appendChild(style);
+
+// ============================================
+// VALIDAÇÃO DE FORMULÁRIO COM SEGURANÇA
+// ============================================
+
+function inicializarFormulario() {
+  const formulario = document.querySelector('.formulario');
+  if (!formulario) return;
+
+  const inputEmail = document.querySelector('input[type="email"]');
+  const inputNome = document.querySelector('input[name="nome"]');
+  const textarea = document.querySelector('textarea');
+  const botaoEnviar = formulario.querySelector('button[type="submit"]');
+
+  // Validação em tempo real
+  if (inputEmail) {
+    inputEmail.addEventListener('blur', validarEmail);
+    inputEmail.addEventListener('input', validarEmail);
+  }
+
+  if (inputNome) {
+    inputNome.addEventListener('blur', validarNome);
+  }
+
+  // Envio do formulário
+  if (botaoEnviar) {
+    formulario.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Verificar honeypot
+      const honeypot = document.querySelector('input[name="website"]');
+      if (honeypot && honeypot.value !== '') {
+        console.warn('Honeypot ativado - possível spam');
+        return;
+      }
+
+      // Validar todos os campos
+      let formularioValido = true;
+
+      if (inputNome && !validarNome()) formularioValido = false;
+      if (inputEmail && !validarEmail()) formularioValido = false;
+      if (textarea && textarea.value.trim() === '') formularioValido = false;
+
+      if (formularioValido) {
+        enviarFormulario(this);
+      }
+    });
+  }
+}
+
+function validarEmail() {
+  const inputEmail = document.querySelector('input[type="email"]');
+  const mensagemErro = inputEmail.nextElementSibling;
+  const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  if (!regexEmail.test(inputEmail.value)) {
+    inputEmail.classList.add('invalido');
+    inputEmail.classList.remove('valido');
+    if (mensagemErro && mensagemErro.classList.contains('mensagem-erro')) {
+      mensagemErro.textContent = 'Por favor, insira um email válido';
+      mensagemErro.classList.add('visivel');
+    }
+    return false;
+  } else {
+    inputEmail.classList.remove('invalido');
+    inputEmail.classList.add('valido');
+    if (mensagemErro && mensagemErro.classList.contains('mensagem-erro')) {
+      mensagemErro.classList.remove('visivel');
+    }
+    return true;
+  }
+}
+
+function validarNome() {
+  const inputNome = document.querySelector('input[name="nome"]');
+  if (!inputNome) return true;
+
+  if (inputNome.value.trim().length < 3) {
+    inputNome.classList.add('invalido');
+    inputNome.classList.remove('valido');
+    return false;
+  } else {
+    inputNome.classList.remove('invalido');
+    inputNome.classList.add('valido');
+    return true;
+  }
+}
+
+function enviarFormulario(formulario) {
+  const botaoEnviar = formulario.querySelector('button[type="submit"]');
+  const mensagemSucesso = formulario.querySelector('.mensagem-sucesso');
+
+  // Desativar botão para evitar múltiplos envios
+  botaoEnviar.disabled = true;
+  botaoEnviar.textContent = 'Enviando...';
+
+  // Simular envio (em produção, seria um POST real)
+  setTimeout(() => {
+    if (mensagemSucesso) {
+      // Usar textContent em vez de innerHTML para evitar XSS
+      mensagemSucesso.textContent = 'Mensagem enviada com sucesso! Obrigado pelo contacto.';
+      mensagemSucesso.classList.add('visivel');
+    }
+
+    // Limpar formulário
+    formulario.reset();
+
+    // Remover validação visual
+    formulario.querySelectorAll('input, textarea').forEach(campo => {
+      campo.classList.remove('valido', 'invalido');
+    });
+
+    // Reativar botão após 3 segundos
+    setTimeout(() => {
+      botaoEnviar.disabled = false;
+      botaoEnviar.textContent = 'Enviar';
+      if (mensagemSucesso) {
+        mensagemSucesso.classList.remove('visivel');
+      }
+    }, 3000);
+  }, 1000);
+}
+
+// ============================================
+// SCROLL SUAVE
+// ============================================
+
+function configurarScrollSuave() {
+  const links = document.querySelectorAll('a[href^="#"]');
+  
+  links.forEach(link => {
+    link.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href === '#') return;
+
+      const alvo = document.querySelector(href);
+      if (alvo) {
+        e.preventDefault();
+        alvo.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  });
+}
+
+// ============================================
+// SEGURANÇA: PROTEÇÃO CONTRA REVERSE TABNABBING
+// ============================================
+
+// Adicionar rel="noopener noreferrer" a todos os links externos
+document.addEventListener('DOMContentLoaded', function() {
+  const linksExternos = document.querySelectorAll('a[target="_blank"]');
+  linksExternos.forEach(link => {
+    link.setAttribute('rel', 'noopener noreferrer');
+  });
+});
+
+// ============================================
+// UTILITÁRIOS
+// ============================================
+
+// Função para sanitizar texto (evitar XSS)
+function sanitizarTexto(texto) {
+  const div = document.createElement('div');
+  div.textContent = texto;
+  return div.innerHTML;
+}
+
+// Função para log seguro
+function logSeguro(mensagem) {
+  console.log('[Build & Learn]', mensagem);
+}
+
+// ============================================
+// OBSERVADOR DE INTERSEÇÃO (Performance)
+// ============================================
+
+const observador = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+// Observar cartões para animação
+document.querySelectorAll('.card').forEach(card => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(20px)';
+  card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+  observador.observe(card);
+});
+
+// ============================================
+// EXPORTAR FUNÇÕES (para testes)
+// ============================================
+
+if (typeof module !== 'undefined' && module.exports) {
+  module.exports = {
+    validarEmail,
+    validarNome,
+    sanitizarTexto,
+    inicializarTema,
+    alternarTema
+  };
+}

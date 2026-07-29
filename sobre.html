@@ -1,235 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-PT">
 <head>
-    <!-- Metadados: charset, viewport responsivo, título da aba e favicon -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós - Build and Learn TI</title>
-    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
-    <!-- CSS próprio do portal (estilo-portal.css) + ícones Font Awesome via CDN -->
-    <link rel="stylesheet" href="estilo-portal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sobre o Build & Learn - Nossa História e Equipa">
+  <title>Sobre - Build & Learn IT</title>
+  <link rel="stylesheet" href="estilo-portal-novo.css">
+  <link rel="icon" type="image/png" href="logo/Build_Learn_Aneis_03_Monocromatico_Transparente.webp">
 </head>
-
 <body>
-    <div class="Layout-principal">
-        <!-- Botão de alternar tema claro/escuro. O ícone SVG é estático;
-             a troca de data-theme + persistência em localStorage está em script.js -->
-        <div class="theme-container-global">
-            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </div>
-        <!-- Cabeçalho visível apenas em mobile/tablet (< 900px, ver media query em estilo-portal.css):
-             logo + botão hambúrguer que abre a barra lateral (.menu-aberto) -->
-        <header class="Layout-mobile-header">
-            <img src="logo/logo.svg" alt="Logo">
-            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
-        </header>
-        <!-- Barra lateral de navegação: fixa no desktop, deslizante em mobile.
-             O link da página actual leva a classe "active" -->
-        <aside class="Layout-aside">
-            <div class="Layout-aside__logo">
-                <img src="logo/logo.svg" alt="Logo do site">
-                <h2>Build and Learn TI</h2>
-                <p>Tecnologias de Informação</p>
-            </div>
-            <nav class="Layout-aside__nav">
-                <ul>
-                    <li><a href="Inicio.html">Início</a></li>
-                    <li><a href="sobre.html" class="active">Sobre</a></li>
-                    <li><a href="Materiais.html">Materiais</a></li>
-                    <li><a href="Eventos.html">Eventos</a></li>
-                    <li><a href="Projectos.html">Projectos</a></li>
-                    <li><a href="Contacto.html">Contato</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <!-- Conteúdo principal da página Sobre -->
-        <main class="Layout-main">
-            <p>QUEM SOMOS</p>
-            <h2>Sobre o Grupo</h2>
-            <p>O Grupo de Tecnologias de Informação é uma comunidade de aprendizagem criada para organizar a identidade
-                digital dos seus membros, centralizar materiais, divulgar eventos e iniciar a prática de colaboração com
-                GitHub.</p>
-            <!-- Objectivo/missão do grupo, em destaque -->
-            <section class="objetivo-principal">
-                <p>OBJECTIVO PRINCIPAL</p>
-                <p>"Criar um portal digital do grupo que funcione como ponto central de apresentação, partilha de
-                    conhecimento e organização de projectos, incentivando a aprendizagem contínua, a colaboração e o
-                    crescimento profissional dos membros na área de Tecnologias de Informação."</p>
-            </section>
-            <!-- Grelha de valores do grupo (6 cartões) -->
-            <div class="grelha-valores">
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-handshake fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">colaboração</h3>
-                    <p class="cartao-valor__descricao">
-                        Promover o trabalho em equipa e a partilha de conhecimento entre todos os membros.
-                    </p>
-                </article>
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-book-open fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">aprendizagem</h3>
-                    <p class="cartao-valor__descricao">
-                        Incetivar a aprendizagem continua com recursos, cursos e materiais acessiveis.
-                    </p>
-                </article>
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-rocket fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">Crescimento</h3>
-                    <p class="cartao-valor__descricao">
-                        Apoiar o desenvolvimento profissional de cada membro na área de TI
-                    </p>
-                </article>
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-link fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">Rede de Contactos</h3>
-                    <p class="cartao-valor__descricao">
-                        Construir uma comunidade sólida de profissionais e entusiastas de tecnologia.
-                    </p>
-                </article>
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-lightbulb fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">Inovação</h3>
-                    <p class="cartao-valor__descricao">
-                        Estimular a criatividade e a resolução de problemas através de projectos reais.
-                    </p>
-                </article>
-                <article class="cartao-valor">
-                    <div class="cartao-valor__icone"><i class="fa-solid fa-book fa-2x"></i></div>
-                    <h3 class="cartao-valor__titulo">Documentação</h3>
-                    <p class="cartao-valor__descricao">
-                        Cultivar boas práticas de organização, documentação e versionamento de código.
-                    </p>
-                </article>
-
-            </div>
-            <!-- Lista da equipa: cada membro tem iniciais como avatar, nome, cargo e área/etiqueta -->
-            <section class="seccao-equipa">
-                <h2 class="titulo-equipa">EQUIPA (12 MEMBROS)</h2>
-                <ul class="grelha-membros">
-
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">CN</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Cesarino Nhabangue</strong>
-                            <span class="cartao-membro__cargo">Presidente/Coordenador</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Coordenação</div>
-                    </li>
-
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">KN</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Khayllane Nyambir</strong>
-                            <span class="cartao-membro__cargo">Directora de Estrategia</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Conteúdo</div>
-                    </li>
-
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">SN</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Soares Nhangave</strong>
-                            <span class="cartao-membro__cargo">Director Técnico</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Front-end</div>
-
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">KC</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Kim Cleópatra</strong>
-                            <span class="cartao-membro__cargo">Design/UI</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Design</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">MG</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Mirafilda Gamboa</strong>
-                            <span class="cartao-membro__cargo">Design/UI</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Design</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">LV</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Lónel Vasco</strong>
-                            <span class="cartao-membro__cargo">desenvolvedor Front-end</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Front-end</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">MM</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Manuel Matsinhe</strong>
-                            <span class="cartao-membro__cargo">desenvolvedor Front-end</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Front-end</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">DM</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Denzel Mbanze</strong>
-                            <span class="cartao-membro__cargo">GitHub e Documentação</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">GitHub</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">MB</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Miguel Bento</strong>
-                            <span class="cartao-membro__cargo">GitHub e Documentação</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">GitHub</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">NM</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Nicole Matsinhe</strong>
-                            <span class="cartao-membro__cargo">Conteúdo e Pesquisa</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Conteúdo</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">MG</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Manuel Guirutw</strong>
-                            <span class="cartao-membro__cargo">Testes e Revisão</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Testes</div>
-                    </li>
-                    <li class="cartao-membro">
-                        <div class="cartao-membro__avatar">YT</div>
-                        <div class="cartao-membro__info">
-                            <strong class="cartao-membro__nome">Yannich Thay</strong>
-                            <span class="cartao-membro__cargo">Testes e Revisão</span>
-                        </div>
-                        <div class="cartao-membro__etiqueta">Testes</div>
-                    </li>
-                </ul>
-            </section>
-        </main>
+  <!-- HEADER -->
+  <header>
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="logo/Build_Learn_Aneis_01_Principal.webp" alt="Build & Learn Logo">
+        <span>Build & Learn IT</span>
+      </a>
+      
+      <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      
+      <nav>
+        <a href="index.html">Início</a>
+        <a href="sobre.html" class="ativo">Sobre</a>
+        <a href="Materiais.html">Materiais</a>
+        <a href="Eventos.html">Eventos</a>
+        <a href="Projectos.html">Projetos</a>
+        <a href="Contacto.html">Contacto</a>
+        <button id="botao-tema" class="btn btn-secundario" aria-label="Alternar tema">🌙</button>
+      </nav>
     </div>
-    <!-- Script global partilhado por todas as páginas: tema, menu mobile, filtro de
-         materiais, validação do formulário de contacto, indicador de página activa, etc. -->
-    <script src="script.js"></script>
-</body>
+  </header>
 
+  <!-- SOBRE SECTION -->
+  <section id="sobre">
+    <div class="section-titulo">Sobre Nós</div>
+    <h2 class="section-heading">Transformar conhecimento em prática consistente.</h2>
+    
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; align-items: center;">
+      <div>
+        <p>O Build & Learn é mais do que um grupo de estudo; é uma comunidade onde estudantes e jovens profissionais de tecnologia se unem para encurtar a distância entre o aprender e o fazer.</p>
+        <p style="margin-top: 1rem;">Acreditamos que a verdadeira competência nasce da prática real e da colaboração. Por isso, focamos em projetos reais, produtos funcionais e partilha de conhecimento técnico constante.</p>
+      </div>
+      <div class="card card-destaque">
+        <div class="card-titulo">O Nosso Compromisso</div>
+        <p class="card-descricao">Criar um ambiente seletivo onde a qualidade, o compromisso e a contribuição ativa são os pilares para o crescimento de cada membro.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EQUIPA SECTION -->
+  <section id="equipa" style="background-color: #F5F1E8;">
+    <div class="section-titulo">Liderança</div>
+    <h2 class="section-heading">Decisões distribuídas por responsabilidade</h2>
+    
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-titulo">Cesarino Nhabangue</div>
+        <p class="card-descricao" style="font-weight: 600; color: #D4AF37;">Presidente / Coordenador Geral</p>
+        <p class="card-descricao">“A voz final e externa.”</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-titulo">Khayllane Nyambir</div>
+        <p class="card-descricao" style="font-weight: 600; color: #D4AF37;">Diretora de Estratégia e Operações</p>
+        <p class="card-descricao">“O motor interno.”</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-titulo">Soares Nhangave</div>
+        <p class="card-descricao" style="font-weight: 600; color: #D4AF37;">Diretor Técnico e de Projetos</p>
+        <p class="card-descricao">“O que se constrói e com que padrão.”</p>
+      </div>
+      
+      <div class="card">
+        <div class="card-titulo">Nicole Matimbe</div>
+        <p class="card-descricao" style="font-weight: 600; color: #D4AF37;">Diretora de Comunicação e Comunidade</p>
+        <p class="card-descricao">“A ponte entre a comunidade e a sua voz pública.”</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTERS SECTION -->
+  <section id="testers">
+    <div class="section-titulo">Equipa de Revisão</div>
+    <h2 class="section-heading">Qualidade e Testes</h2>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-titulo">Yannich Thay</div>
+        <p class="card-descricao">QA & Revisão Técnica</p>
+      </div>
+      <div class="card">
+        <div class="card-titulo">Manuel Guirute</div>
+        <p class="card-descricao">QA & Revisão de Usabilidade</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-content">
+        <div class="footer-secao">
+          <h3>Explorar</h3>
+          <a href="index.html">Início</a>
+          <a href="sobre.html">Sobre</a>
+          <a href="Materiais.html">Materiais</a>
+          <a href="Eventos.html">Eventos</a>
+          <a href="Projectos.html">Projetos</a>
+          <a href="Contacto.html">Contacto</a>
+        </div>
+        
+        <div class="footer-secao">
+          <h3>Comunidade</h3>
+          <a href="https://github.com/Build-Learn-TI" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/company/build-learn-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="Contacto.html">Contacto</a>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <div class="footer-copyright">© 2026 Build & Learn. Todos os direitos reservados.</div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
 </html>
