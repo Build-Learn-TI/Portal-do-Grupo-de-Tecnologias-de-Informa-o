@@ -31,12 +31,20 @@ function inicializarTema() {
 }
 
 function aplicarTema(tema) {
-  if (tema === 'escuro') {
+  const botaoTema = document.getElementById('botao-tema');
+  const escuro = tema === 'escuro';
+
+  if (escuro) {
     document.body.classList.add('dark-mode');
     localStorage.setItem('tema', 'escuro');
   } else {
     document.body.classList.remove('dark-mode');
     localStorage.setItem('tema', 'claro');
+  }
+
+  if (botaoTema) {
+    botaoTema.textContent = escuro ? '☀️' : '🌙';
+    botaoTema.setAttribute('aria-label', escuro ? 'Alternar para tema claro' : 'Alternar para tema escuro');
   }
 }
 
@@ -101,12 +109,11 @@ function inicializarNavegacao() {
 
 function atualizarIndicadorPagina() {
   const links = document.querySelectorAll('nav a');
-  const paginaAtual = window.location.pathname;
+  const paginaAtual = window.location.pathname.split('/').pop() || 'index.html';
 
   links.forEach(link => {
     link.classList.remove('ativo');
-    if (link.getAttribute('href') === paginaAtual || 
-        (paginaAtual === '/' && link.getAttribute('href') === 'Inicio.html')) {
+    if (link.getAttribute('href') === paginaAtual) {
       link.classList.add('ativo');
     }
   });

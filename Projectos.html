@@ -1,152 +1,17 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="pt-PT">
 <head>
-    <!-- Metadados: charset, viewport responsivo, título da aba e favicon -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projectos - Build and Learn TI</title>
-    <link rel="icon" type="image/svg+xml" href="logo/logo.svg">
-    <!-- CSS próprio do portal (estilo-portal.css) + ícones Font Awesome via CDN -->
-    <link rel="stylesheet" href="estilo-portal.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.0/css/all.min.css"
-        integrity="sha512-ApSLB1Pd3/bZN8fWB/RG9YhN/7bd9Hkf3AGaE2mPfebjrxagjuBtx2GcgdqIlJkUzwylBo61r9Xa9NmgBI0swA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Projetos e progresso do Build & Learn IT.">
+  <title>Projetos — Build & Learn IT</title>
+  <link rel="icon" type="image/png" href="logo/logo-principal.png">
+  <link rel="stylesheet" href="estilo-portal.css">
 </head>
-
 <body>
-    <div class="Layout-principal">
-        <!-- Botão de alternar tema claro/escuro. O ícone SVG é estático;
-             a troca de data-theme + persistência em localStorage está em script.js -->
-        <div class="theme-container-global">
-            <button id="theme-toggle" class="btn-tema" title="Alternar Tema">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                    stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="5"></circle>
-                    <line x1="12" y1="1" x2="12" y2="3"></line>
-                    <line x1="12" y1="21" x2="12" y2="23"></line>
-                    <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                    <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                    <line x1="1" y1="12" x2="3" y2="12"></line>
-                    <line x1="21" y1="12" x2="23" y2="12"></line>
-                    <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                    <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                </svg>
-            </button>
-        </div>
-        <!-- Cabeçalho visível apenas em mobile/tablet (< 900px, ver media query em estilo-portal.css):
-             logo + botão hambúrguer que abre a barra lateral (.menu-aberto) -->
-        <header class="Layout-mobile-header">
-            <img src="logo/logo.svg" alt="Logo">
-            <button id="mobile-menu-btn" class="btn-hamburguer">☰</button>
-        </header>
-        <!-- Barra lateral de navegação: fixa no desktop, deslizante em mobile.
-             O link da página actual leva a classe "active" -->
-        <aside class="Layout-aside">
-            <div class="Layout-aside__logo">
-                <img src="logo/logo.svg" alt="Logo do site">
-                <h2>Build and Learn TI</h2>
-                <p>Tecnologias de Informação</p>
-            </div>
-            <nav class="Layout-aside__nav">
-                <ul>
-                    <li><a href="Inicio.html">Início</a></li>
-                    <li><a href="sobre.html">Sobre</a></li>
-                    <li><a href="Materiais.html">Materiais</a></li>
-                    <li><a href="Eventos.html">Eventos</a></li>
-                    <li><a href="Projectos.html" class="active">Projectos</a></li>
-                    <li><a href="Contacto.html">Contato</a></li>
-                </ul>
-            </nav>
-        </aside>
-        <!-- Conteúdo principal da página Projectos -->
-        <main class="Layout-main">
-            <!-- Trilha visual com as 7 fases do portal: cada .fase-item tem estado
-                 concluida/atual/pendente e é ligado ao seguinte por uma .linha-conectora -->
-            <section class="progresso-portal">
-                <h2 class="titulo-progresso">PROGRESSO DO PORTAL &mdash; 7 FASES</h2>
-
-                <div class="trilha-progresso">
-                    <div class="fase-item concluida">
-                        <div class="indicador">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <span class="legenda">Alinhamento</span>
-                    </div>
-
-                    <div class="linha-conectora concluida">linha</div>
-
-                    <div class="fase-item concluida">
-                        <div class="indicador">
-                            <i class="fa-solid fa-check"></i>
-                        </div>
-                        <span class="legenda">Identidade<br>Visual</span>
-                    </div>
-
-                    <div class="linha-conectora concluida">linha</div>
-
-                    <div class="fase-item atual">
-                        <div class="indicador">3</div>
-                        <span class="legenda">Construção</span>
-                    </div>
-
-                    <div class="linha-conectora pendente">linha</div>
-
-                    <div class="fase-item pendente">
-                        <div class="indicador">4</div>
-                        <span class="legenda">Integração</span>
-                    </div>
-
-                    <div class="linha-conectora pendente">Linha</div>
-
-                    <div class="fase-item pendente">
-                        <div class="indicador">5</div>
-                        <span class="legenda">Testes</span>
-                    </div>
-
-                    <div class="linha-conectora pendente">linha</div>
-
-                    <div class="fase-item pendente">
-                        <div class="indicador">6</div>
-                        <span class="legenda">Publicação</span>
-                    </div>
-
-                    <div class="linha-conectora pendente"></div>
-
-                    <div class="fase-item pendente">
-                        <div class="indicador">7</div>
-                        <span class="legenda">Melhorias</span>
-                    </div>
-                </div>
-            </section>
-            <!-- Cartões com os projectos/iniciativas do grupo e o respectivo estado -->
-            <section class="Fases">
-                <article class="cartao-fase">
-                    <h3 class="Fase">Portal do Grupo de TI</h3>
-                    <span class="estado em-andamento">Em andamento</span>
-                    <p class="descricao">Fase 3 - Construção</p>
-                </article>
-                <article class="cartao-fase">
-                    <h3 class="Fase">Repositório de Materiais</h3>
-                    <span class="estado planeado">Planeado</span>
-                    <p class="descricao">Fase 7 - Melhorias</p>
-                </article>
-                <article class="cartao-fase">
-                    <h3 class="Fase">Blog Técnico do Grupo</h3>
-                    <span class="estado futuro">Futuro</span>
-                    <p class="descricao">Fase 7 - Planeado</p>
-                </article>
-                <article class="cartao-fase">
-                    <h3 class="Fase">Painel de Eventos</h3>
-                    <span class="estado futuro">Futuro</span>
-                    <p class="descricao">Fase 7 - Planeado</p>
-                </article>
-            </section>
-        </main>
-
-        <!-- Script global partilhado por todas as páginas: tema, menu mobile, filtro de
-             materiais, validação do formulário de contacto, indicador de página activa, etc. -->
-        <script src="script.js"></script>
+  <header><div class="header-container"><a href="index.html" class="logo"><img src="logo/logo-principal.png" alt="Build & Learn"><span>Build & Learn IT</span></a><button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button><nav><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="Materiais.html">Materiais</a><a href="Eventos.html">Eventos</a><a href="Projectos.html" class="ativo">Projetos</a><a href="Contacto.html">Contacto</a><button id="botao-tema" class="btn btn-secundario" aria-label="Alternar tema">🌙</button></nav></div></header>
+  <main><section><div class="page-intro"><div class="section-titulo">Projetos</div><h1 class="section-heading">Construir, testar e melhorar.</h1><p>Acompanhamos cada iniciativa com objetivos claros e espaço para aprender durante o processo.</p></div><h2 class="subsection-title">Progresso do portal — 7 fases</h2><div class="progresso" aria-label="Progresso do portal"><div class="etapa concluida"><div class="etapa-indicador">✓</div>Alinhamento</div><div class="etapa concluida"><div class="etapa-indicador">✓</div>Identidade visual</div><div class="etapa atual"><div class="etapa-indicador">3</div>Construção</div><div class="etapa"><div class="etapa-indicador">4</div>Integração</div><div class="etapa"><div class="etapa-indicador">5</div>Testes</div><div class="etapa"><div class="etapa-indicador">6</div>Publicação</div><div class="etapa"><div class="etapa-indicador">7</div>Melhorias</div></div><h2 class="subsection-title">Iniciativas</h2><div class="projectos-grid"><article class="card projecto-card"><span class="estado estado-andamento">Em andamento</span><h3 class="card-titulo">Portal do Grupo de TI</h3><p class="card-descricao">Fase 3 — construção de uma presença digital clara, útil e acessível.</p></article><article class="card projecto-card"><span class="estado estado-planeado">Planeado</span><h3 class="card-titulo">Repositório de Materiais</h3><p class="card-descricao">Uma biblioteca organizada para partilhar recursos de aprendizagem.</p></article><article class="card projecto-card"><span class="estado estado-futuro">Futuro</span><h3 class="card-titulo">Blog Técnico do Grupo</h3><p class="card-descricao">Espaço para documentar experiências, tutoriais e aprendizagens.</p></article><article class="card projecto-card"><span class="estado estado-futuro">Futuro</span><h3 class="card-titulo">Painel de Eventos</h3><p class="card-descricao">Gestão de inscrições e acompanhamento das atividades da comunidade.</p></article></div></section></main>
+  <footer><div class="footer-container"><div class="footer-content"><div class="footer-secao"><h3>Explorar</h3><a href="index.html">Início</a><a href="sobre.html">Sobre</a><a href="Materiais.html">Materiais</a><a href="Eventos.html">Eventos</a><a href="Contacto.html">Contacto</a></div><div class="footer-secao"><h3>Comunidade</h3><a href="https://github.com/Build-Learn-TI" target="_blank" rel="noopener noreferrer">GitHub</a><a href="https://www.linkedin.com/company/build-learn-it/" target="_blank" rel="noopener noreferrer">LinkedIn</a></div></div><div class="footer-bottom"><div class="footer-copyright">© 2026 Build &amp; Learn. Todos os direitos reservados.</div></div></div></footer>
+  <script src="script.js"></script>
 </body>
-
 </html>
