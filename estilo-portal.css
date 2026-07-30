@@ -1,4 +1,4 @@
-/* ============================================
+/* ============================================\
    PORTAL DO GRUPO DE TECNOLOGIAS DE INFORMAÇÃO
    Novo Design - Paleta Prestígio
    Verde-Petróleo (#1B4D3E), Dourado (#D4AF37), Marfim (#F5F1E8)
@@ -516,134 +516,6 @@ body.dark-mode label {
   color: var(--cor-texto-claro);
 }
 
-/* Conteúdo que ainda utiliza cores declaradas directamente no HTML. */
-body.dark-mode [style*="color: #666"] {
-  color: rgba(255, 255, 255, 0.74) !important;
-}
-
-body.dark-mode [style*="color: #1B4D3E"] {
-  color: var(--cor-texto-claro) !important;
-}
-
-/* ============================================
-   EVENTOS E PROJECTOS
-   ============================================ */
-
-.page-intro {
-  max-width: 760px;
-  margin-bottom: 2.75rem;
-}
-
-.page-intro p:last-child {
-  color: #626b68;
-  font-size: 1.08rem;
-}
-
-.subsection-title {
-  font-size: 1.05rem;
-  color: var(--cor-primaria);
-  margin: 2.5rem 0 1rem;
-}
-
-.eventos-lista {
-  display: grid;
-  gap: 1rem;
-}
-
-.evento-card {
-  display: grid;
-  grid-template-columns: 5.5rem 1fr auto;
-  align-items: center;
-  gap: 1.5rem;
-  background: var(--cor-neutro);
-  border: 1px solid var(--cor-borda);
-  border-radius: 10px;
-  padding: 1.25rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, .04);
-}
-
-.evento-data {
-  display: grid;
-  place-items: center;
-  min-height: 5rem;
-  padding: .5rem;
-  border-radius: 8px;
-  background: var(--cor-primaria);
-  color: var(--cor-texto-claro);
-  line-height: 1;
-}
-
-.evento-data strong { font-size: 1.9rem; }
-.evento-data span { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; }
-.evento-card h3 { color: var(--cor-primaria); font-size: 1.15rem; margin-bottom: .3rem; }
-.evento-meta { color: #68716d; font-size: .9rem; margin-bottom: .35rem; }
-.evento-card p { color: #56605c; }
-.evento-tipo {
-  display: inline-block;
-  margin-left: .5rem;
-  padding: .15rem .55rem;
-  border-radius: 99px;
-  color: var(--cor-primaria);
-  background: rgba(212, 175, 55, .22);
-  font-size: .75rem;
-  font-weight: 700;
-  vertical-align: middle;
-}
-
-.evento-card .btn { white-space: nowrap; }
-.evento-passado { opacity: .7; }
-.evento-passado .evento-data { background: #68716d; }
-
-.progresso {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(6.25rem, 1fr));
-  gap: .65rem;
-  overflow-x: auto;
-  padding: .5rem 0 1.25rem;
-}
-
-.etapa {
-  min-width: 6.25rem;
-  text-align: center;
-  color: #68716d;
-  font-size: .85rem;
-}
-
-.etapa-indicador {
-  display: grid;
-  place-items: center;
-  width: 2.65rem;
-  height: 2.65rem;
-  margin: 0 auto .65rem;
-  border: 2px solid var(--cor-borda);
-  border-radius: 50%;
-  font-weight: 700;
-  background: var(--cor-fundo-claro);
-}
-
-.etapa.concluida .etapa-indicador { background: var(--cor-primaria); border-color: var(--cor-primaria); color: #fff; }
-.etapa.atual .etapa-indicador { border-color: var(--cor-secundaria); box-shadow: 0 0 0 5px rgba(212, 175, 55, .18); color: var(--cor-primaria); }
-.etapa.atual { color: var(--cor-primaria); font-weight: 700; }
-
-.projectos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.25rem; }
-.projecto-card { display: flex; flex-direction: column; min-height: 12rem; }
-.projecto-card .card-descricao { margin-top: .75rem; }
-.membros-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.25rem; }
-.membro-card { min-height: 13.5rem; }
-.membro-card .card-titulo { margin: .85rem 0 .5rem; }
-.funcao-membro { display: inline-block; padding: .2rem .65rem; border: 1px solid rgba(27, 77, 62, .28); border-radius: 999px; color: var(--cor-primaria); font-size: .82rem; font-weight: 700; }
-body.dark-mode .funcao-membro { border-color: rgba(232, 197, 71, .55); color: var(--cor-secundaria); }
-.estado { display: inline-block; align-self: flex-start; padding: .2rem .65rem; border-radius: 999px; font-size: .8rem; font-weight: 700; }
-.estado-andamento { color: #0d5b43; background: #d9f2e7; }
-.estado-planeado { color: #795a00; background: #fff1bd; }
-.estado-futuro { color: #5a6270; background: #e8ebef; }
-
-body.dark-mode .page-intro p:last-child,
-body.dark-mode .evento-meta,
-body.dark-mode .evento-card p { color: rgba(255, 255, 255, .72); }
-body.dark-mode .evento-card h3 { color: var(--cor-texto-claro); }
-body.dark-mode .etapa-indicador { background: #2a2a2a; }
-
 /* ============================================
    RESPONSIVIDADE
    ============================================ */
@@ -694,9 +566,6 @@ body.dark-mode .etapa-indicador { background: #2a2a2a; }
   .filtros {
     justify-content: flex-start;
   }
-
-  .evento-card { grid-template-columns: 5rem 1fr; }
-  .evento-card .btn { grid-column: 2; justify-self: start; }
 }
 
 @media (max-width: 600px) {
@@ -736,13 +605,6 @@ body.dark-mode .etapa-indicador { background: #2a2a2a; }
   .footer-content {
     grid-template-columns: 1fr;
   }
-
-  .logo { font-size: 1.1rem; }
-  .logo img { height: 34px; }
-  .evento-card { grid-template-columns: 1fr; gap: 1rem; }
-  .evento-data { width: 5rem; }
-  .evento-card .btn { grid-column: auto; width: auto; }
-  .page-intro { margin-bottom: 2rem; }
 }
 
 /* ============================================
