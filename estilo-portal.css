@@ -229,6 +229,17 @@ section {
   margin: 0 auto;
 }
 
+/* Superfície de destaque para secções com cartões. */
+.section-destaque {
+  background-color: var(--cor-neutro);
+}
+
+.section-introducao {
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #666;
+}
+
 .section-titulo {
   font-size: 0.9rem;
   font-weight: 700;
@@ -502,6 +513,14 @@ body.dark-mode textarea {
 
 body.dark-mode .section-heading {
   color: var(--cor-texto-claro);
+}
+
+body.dark-mode .section-destaque {
+  background-color: var(--cor-fundo-escuro);
+}
+
+body.dark-mode .section-introducao {
+  color: rgba(255, 255, 255, 0.75);
 }
 
 body.dark-mode .card-titulo {
